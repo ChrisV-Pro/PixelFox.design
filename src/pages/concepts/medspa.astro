@@ -42,7 +42,8 @@
       a { color: inherit; text-decoration: none; }
       button, input, select, textarea { font: inherit; }
       button, a { -webkit-tap-highlight-color: transparent; }
-      svg { display: block; }
+      img, svg { display: block; }
+      img { max-width: 100%; }
 
       .skip-link {
         position: fixed;
@@ -204,21 +205,39 @@
         overflow: hidden;
         background: var(--mist);
       }
-      .hero-visual > svg { width: 100%; height: 100%; }
+      .hero-photo,
+      .hero-photo img {
+        width: 100%;
+        height: 100%;
+      }
+      .hero-photo img {
+        object-fit: cover;
+        object-position: 55% center;
+      }
+      .hero-visual::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(180deg, rgba(17, 34, 29, 0.04) 50%, rgba(17, 34, 29, 0.34) 100%);
+      }
+      .legacy-hero-art { display: none; }
       .visual-number {
         position: absolute;
         top: 26px;
         right: 30px;
         z-index: 2;
-        color: var(--ink);
+        color: var(--paper);
         font-size: 9px;
         font-weight: 700;
         letter-spacing: 0.16em;
+        text-shadow: 0 1px 12px rgba(23, 35, 31, 0.4);
       }
       .care-note {
         position: absolute;
         left: 30px;
         bottom: 30px;
+        z-index: 2;
         width: min(270px, calc(100% - 60px));
         padding: 20px;
         color: var(--paper);
@@ -324,6 +343,59 @@
       .treatment-card p { margin: 14px 0 0; font-size: 12px; line-height: 1.65; opacity: 0.7; }
       .treatment-card .arrow { margin-top: auto; align-self: flex-end; font-size: 22px; }
 
+      .editorial-break {
+        padding: 0 var(--gutter) clamp(94px, 11vw, 156px);
+        display: grid;
+        grid-template-columns: minmax(0, 1.4fr) minmax(320px, 0.6fr);
+        align-items: center;
+        background: var(--paper);
+      }
+      .studio-photo {
+        min-height: 650px;
+        overflow: hidden;
+      }
+      .studio-photo img {
+        width: 100%;
+        height: 100%;
+        min-height: 650px;
+        object-fit: cover;
+        object-position: center;
+      }
+      .studio-card {
+        position: relative;
+        z-index: 2;
+        margin-left: -90px;
+        padding: clamp(40px, 5vw, 76px);
+        background: var(--cream);
+        box-shadow: 0 24px 60px rgba(23, 35, 31, 0.12);
+      }
+      .studio-card h2 {
+        margin: 22px 0 0;
+        font-family: var(--serif);
+        font-size: clamp(44px, 4.8vw, 74px);
+        font-weight: 400;
+        letter-spacing: -0.045em;
+        line-height: 0.96;
+      }
+      .studio-card h2 em { color: var(--copper); font-weight: 400; }
+      .studio-card > p:not(.section-index) {
+        margin: 28px 0 0;
+        color: rgba(23, 35, 31, 0.68);
+        font-size: 13px;
+        line-height: 1.75;
+      }
+      .image-note {
+        margin-top: 34px;
+        padding-top: 14px;
+        display: block;
+        border-top: 1px solid var(--line-dark);
+        color: rgba(23, 35, 31, 0.5);
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 0.13em;
+        text-transform: uppercase;
+      }
+
       .philosophy {
         position: relative;
         overflow: hidden;
@@ -388,8 +460,52 @@
         line-height: 0.92;
       }
       .process-top > p:last-child { max-width: 390px; margin: 0; font-size: 14px; line-height: 1.7; }
+      .consultation-story {
+        min-height: 520px;
+        margin-top: 70px;
+        display: grid;
+        grid-template-columns: minmax(0, 1.35fr) minmax(330px, 0.65fr);
+        overflow: hidden;
+        color: var(--paper);
+        background: var(--pine);
+      }
+      .consultation-photo,
+      .consultation-photo img {
+        width: 100%;
+        height: 100%;
+      }
+      .consultation-photo img {
+        min-height: 520px;
+        object-fit: cover;
+        object-position: 50% center;
+      }
+      .consultation-story-copy {
+        padding: clamp(40px, 5vw, 70px);
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+      }
+      .consultation-story-copy small {
+        font-size: 8px;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+      }
+      .consultation-story-copy h3 {
+        margin: 26px 0 0;
+        font-family: var(--serif);
+        font-size: clamp(39px, 4vw, 58px);
+        font-weight: 400;
+        line-height: 0.98;
+      }
+      .consultation-story-copy p {
+        margin: 24px 0 0;
+        color: rgba(251, 248, 242, 0.68);
+        font-size: 13px;
+        line-height: 1.7;
+      }
       .process-grid {
-        margin-top: 76px;
+        margin-top: 20px;
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 20px;
@@ -601,6 +717,7 @@
         .hero-proof { margin-top: 44px; padding-top: 0; grid-template-columns: repeat(3, 1fr); gap: 10px; }
         .hero-proof span { font-size: 7px; }
         .hero-visual { min-height: 500px; }
+        .hero-photo img { object-position: 56% 34%; }
         .care-note { left: 20px; bottom: 20px; }
         .treatment-strip { min-height: 50px; padding-right: 0; justify-content: flex-start; gap: 18px; font-size: 14px; }
 
@@ -630,6 +747,19 @@
         .treatment-card p { grid-column: 2; grid-row: 2; }
         .treatment-card .arrow { grid-column: 3; grid-row: 1 / span 2; margin: 0; align-self: center; }
 
+        .editorial-break {
+          padding: 0 0 84px;
+          grid-template-columns: 1fr;
+        }
+        .studio-photo,
+        .studio-photo img { min-height: 460px; }
+        .studio-photo img { object-position: 62% center; }
+        .studio-card {
+          margin: -42px var(--gutter) 0;
+          padding: 36px 28px 40px;
+        }
+        .studio-card h2 { font-size: clamp(43px, 12vw, 58px); }
+
         .philosophy { padding: 84px var(--gutter); }
         .philosophy-grid { grid-template-columns: 1fr; gap: 44px; }
         .philosophy h2 { max-width: 10ch; }
@@ -638,7 +768,15 @@
         .process-top { display: block; }
         .process-top h2 { font-size: clamp(52px, 15vw, 68px); }
         .process-top > p:last-child { margin-top: 26px; }
-        .process-grid { margin-top: 48px; grid-template-columns: 1fr; gap: 12px; }
+        .consultation-story {
+          min-height: 0;
+          margin-top: 48px;
+          grid-template-columns: 1fr;
+        }
+        .consultation-photo img { min-height: 340px; object-position: 46% center; }
+        .consultation-story-copy { min-height: 300px; padding: 34px 28px 38px; }
+        .consultation-story-copy h3 { font-size: 42px; }
+        .process-grid { margin-top: 12px; grid-template-columns: 1fr; gap: 12px; }
         .process-card { min-height: 230px; }
         .process-card h3 { font-size: 36px; }
 
@@ -690,6 +828,7 @@
         .hero-actions { grid-template-columns: 1fr; }
         .hero-proof { grid-template-columns: 1fr; }
         .hero-visual { min-height: 430px; }
+        .hero-photo img { object-position: 55% 32%; }
         .care-note strong { font-size: 22px; }
         .section-heading h2,
         .philosophy h2,
@@ -757,9 +896,28 @@
           </div>
         </div>
 
-        <div class="hero-visual" aria-label="Abstract editorial study inspired by skin, light, and movement">
+        <div class="hero-visual">
+          <picture class="hero-photo">
+            <source
+              type="image/avif"
+              srcset="/images/medspa/hero-640.avif 640w, /images/medspa/hero-1152.avif 1152w"
+              sizes="(max-width: 760px) 100vw, 48vw"
+            />
+            <source
+              type="image/webp"
+              srcset="/images/medspa/hero-640.webp 640w, /images/medspa/hero-1152.webp 1152w"
+              sizes="(max-width: 760px) 100vw, 48vw"
+            />
+            <img
+              src="/images/medspa/hero-1152.webp"
+              width="1152"
+              height="1440"
+              alt="Editorial portrait created for the fictional Velaire medspa concept"
+              fetchpriority="high"
+            />
+          </picture>
           <span class="visual-number">01 / 05</span>
-          <svg viewBox="0 0 760 920" role="img" aria-labelledby="art-title art-desc" preserveAspectRatio="xMidYMid slice">
+          <svg class="legacy-hero-art" viewBox="0 0 760 920" aria-hidden="true" preserveAspectRatio="xMidYMid slice">
             <title id="art-title">Abstract profile in mineral and copper tones</title>
             <desc id="art-desc">An original vector composition suggesting a human profile, light, and soft layered forms.</desc>
             <defs>
@@ -848,10 +1006,38 @@
         </div>
       </section>
 
+      <section class="editorial-break" aria-labelledby="studio-title">
+        <picture class="studio-photo">
+          <source
+            type="image/avif"
+            srcset="/images/medspa/studio-720.avif 720w, /images/medspa/studio-1440.avif 1440w"
+            sizes="(max-width: 760px) 100vw, 70vw"
+          />
+          <source
+            type="image/webp"
+            srcset="/images/medspa/studio-720.webp 720w, /images/medspa/studio-1440.webp 1440w"
+            sizes="(max-width: 760px) 100vw, 70vw"
+          />
+          <img
+            src="/images/medspa/studio-1440.webp"
+            width="1440"
+            height="960"
+            alt="Conceptual Velaire treatment room in soft mineral and sage tones"
+            loading="lazy"
+          />
+        </picture>
+        <div class="studio-card">
+          <p class="section-index">02 / Designed to exhale</p>
+          <h2 id="studio-title">Clinical care, with room to <em>breathe.</em></h2>
+          <p>A quieter visual rhythm balances professional clarity with the warmth of a considered hospitality experience.</p>
+          <small class="image-note">Original AI-generated editorial image for this fictional concept</small>
+        </div>
+      </section>
+
       <section class="philosophy" aria-labelledby="philosophy-title">
         <div class="philosophy-grid">
           <div>
-            <p class="section-index">02 / The philosophy</p>
+            <p class="section-index">03 / The philosophy</p>
             <h2 id="philosophy-title">Your skin, <em>not a trend.</em></h2>
           </div>
           <div class="philosophy-copy">
@@ -869,10 +1055,36 @@
       <section class="section process" id="experience" aria-labelledby="experience-title">
         <div class="process-top">
           <div>
-            <p class="section-index">03 / The experience</p>
+            <p class="section-index">04 / The experience</p>
             <h2 id="experience-title">Calm from first question to follow-up.</h2>
           </div>
           <p>A simple three-part journey gives prospective patients a clear next step without overselling an outcome.</p>
+        </div>
+        <div class="consultation-story">
+          <picture class="consultation-photo">
+            <source
+              type="image/avif"
+              srcset="/images/medspa/consultation-720.avif 720w, /images/medspa/consultation-1440.avif 1440w"
+              sizes="(max-width: 760px) 100vw, 66vw"
+            />
+            <source
+              type="image/webp"
+              srcset="/images/medspa/consultation-720.webp 720w, /images/medspa/consultation-1440.webp 1440w"
+              sizes="(max-width: 760px) 100vw, 66vw"
+            />
+            <img
+              src="/images/medspa/consultation-1440.webp"
+              width="1440"
+              height="960"
+              alt="Conceptual consultation scene for the fictional Velaire brand"
+              loading="lazy"
+            />
+          </picture>
+          <div class="consultation-story-copy">
+            <small>Consultation first</small>
+            <h3>More listening. Less selling.</h3>
+            <p>The most reassuring next step is a clear conversation, with space for questions before any decision.</p>
+          </div>
         </div>
         <div class="process-grid">
           <article class="process-card">
@@ -895,7 +1107,7 @@
 
       <section class="consult" id="consult" aria-labelledby="consult-title">
         <div class="consult-copy">
-          <p class="section-index">04 / Start here</p>
+          <p class="section-index">05 / Start here</p>
           <h2 id="consult-title">Begin with a <em>conversation.</em></h2>
           <p>This mock appointment flow demonstrates how the concept could turn interest into a clear, low-pressure next step.</p>
           <p class="concept-note">
@@ -934,7 +1146,7 @@
 
       <section class="faq" id="questions" aria-labelledby="faq-title">
         <div class="faq-heading">
-          <p class="section-index">05 / Good questions</p>
+          <p class="section-index">06 / Good questions</p>
           <h2 id="faq-title">Clarity builds <em>confidence.</em></h2>
         </div>
         <div class="faq-list">
@@ -969,7 +1181,7 @@
         </nav>
       </div>
       <div class="footer-bottom">
-        <p>Velaire Aesthetic Studio is an independent fictional website concept by PixelFox.design. It is not a real medical practice and makes no treatment or results claims.</p>
+        <p>Velaire Aesthetic Studio is an independent fictional website concept by PixelFox.design. It is not a real medical practice and makes no treatment or results claims. Editorial images were AI-generated specifically for this concept.</p>
         <a href="/">Return to PixelFox.design</a>
       </div>
     </footer>
