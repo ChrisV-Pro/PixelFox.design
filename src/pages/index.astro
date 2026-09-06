@@ -121,4 +121,13 @@ document.addEventListener('click', function(event) {
  if(back){document.querySelectorAll('dialog[open]').forEach(d=>d.close());}
 });
 document.querySelectorAll('.preview-dialog').forEach(dialog=>dialog.addEventListener('click',event=>{if(event.target===dialog){const r=dialog.getBoundingClientRect();if(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom)dialog.close();}}));
-</script></body></html>
+</script><style>
+@media (max-width: 700px) {
+  .contact-grid > * { min-width: 0; }
+  .contact h2 { font-size: clamp(54px, 17vw, 66px); }
+}
+
+@media (max-width: 365px) {
+  .contact h2 { font-size: clamp(52px, 17vw, 60px); }
+}
+</style></body></html>
