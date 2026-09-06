@@ -252,9 +252,10 @@ const canonicalUrl = "https://pixelfox.design/concepts/law/";
       .hero-rail span + span { color: var(--brass-light); }
       .image-note { position: absolute; z-index: 3; right: 52px; bottom: 38px; margin: 0; font-family: var(--sans); font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }
 
-      .introduction { padding: clamp(90px, 12vw, 185px) clamp(24px, 7vw, 110px); display: grid; grid-template-columns: 0.22fr 1.2fr 0.72fr; gap: clamp(40px, 7vw, 110px); background: var(--paper); }
+      .introduction { padding: clamp(90px, 10vw, 150px) clamp(24px, 7vw, 110px); display: grid; grid-template-columns: 0.22fr 1.2fr 0.72fr; gap: clamp(40px, 7vw, 110px); background: var(--paper); }
       .roman { color: var(--brass); font-size: clamp(88px, 10vw, 150px); line-height: 0.8; }
       .introduction h2, .practice h2, .consultation h2, .principles h2, .inquiry h2, .questions h2 { margin-bottom: 0; font-size: clamp(52px, 6.3vw, 98px); line-height: 0.98; }
+      .inquiry h2 { font-size: clamp(52px, 5.4vw, 86px); }
       .intro-copy { padding-top: 74px; }
       .intro-copy p { margin-bottom: 28px; }
       .intro-copy .lead { font-size: 25px; line-height: 1.45; }
@@ -272,7 +273,7 @@ const canonicalUrl = "https://pixelfox.design/concepts/law/";
       .practice-list i { color: var(--brass-light); font-size: 24px; font-style: normal; }
 
       .consultation { display: grid; grid-template-columns: minmax(0, 48%) minmax(0, 52%); background: var(--paper-light); }
-      .consultation-image { position: relative; min-height: 900px; margin: 0; overflow: hidden; filter: sepia(0.12); }
+      .consultation-image { position: relative; min-height: 820px; margin: 0; overflow: hidden; filter: sepia(0.12); }
       .consultation-image picture, .consultation-image img { width: 100%; height: 100%; }
       .consultation-image img { object-fit: cover; object-position: center; }
       .consultation-image figcaption { position: absolute; right: 18px; bottom: 16px; padding: 8px 10px; color: var(--paper); background: rgba(16,19,15,0.82); font-family: var(--sans); font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; }
@@ -293,16 +294,16 @@ const canonicalUrl = "https://pixelfox.design/concepts/law/";
       .desk-overlay h2 { max-width: 1100px; margin: auto 0; font-size: clamp(62px, 7.8vw, 122px); line-height: 0.92; font-weight: 400; }
       .desk-overlay span { color: var(--brass-light); }
 
-      .principles { padding: clamp(90px, 12vw, 185px) clamp(24px, 7vw, 110px); background: var(--paper); }
+      .principles { padding: clamp(90px, 10vw, 150px) clamp(24px, 7vw, 110px); background: var(--paper); }
       .principles > h2 { max-width: 1160px; }
-      .principle-grid { margin-top: 95px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
-      .principle-grid article { min-height: 330px; padding: 30px 40px; border-right: 1px solid var(--line-light); }
+      .principle-grid { margin-top: 80px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
+      .principle-grid article { min-height: 290px; padding: 30px 40px; border-right: 1px solid var(--line-light); }
       .principle-grid article:last-child { border-right: 0; }
       .principle-grid span { color: var(--oxblood); font-family: var(--sans); font-size: 12px; letter-spacing: 0.14em; }
-      .principle-grid h3 { margin: 90px 0 18px; font-size: 35px; font-weight: 400; }
+      .principle-grid h3 { margin: 72px 0 18px; font-size: 35px; font-weight: 400; }
       .principle-grid p { margin: 0; }
 
-      .inquiry { padding: clamp(90px, 11vw, 170px) clamp(24px, 7vw, 110px); display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(430px, 0.7fr); gap: clamp(70px, 10vw, 160px); color: var(--paper); background: var(--oxblood); }
+      .inquiry { padding: clamp(90px, 9vw, 140px) clamp(24px, 7vw, 110px); display: grid; grid-template-columns: minmax(0, 0.9fr) minmax(430px, 0.7fr); gap: clamp(60px, 8vw, 120px); color: var(--paper); background: var(--oxblood); }
       .seal { width: 132px; height: 132px; margin-bottom: 55px; display: flex; align-items: center; justify-content: center; gap: 6px; border: 1px solid var(--brass-light); border-radius: 50%; color: var(--brass-light); font-size: 32px; outline: 1px solid var(--brass-light); outline-offset: -8px; transform: rotate(-5deg); }
       .seal small { font-size: 16px; font-style: italic; }
       .inquiry-copy > p:not(.section-label) { max-width: 600px; margin: 40px 0; font-size: 20px; }
@@ -320,7 +321,7 @@ const canonicalUrl = "https://pixelfox.design/concepts/law/";
       .inquiry-form button:hover, .inquiry-form button:focus-visible { color: var(--green); background: var(--brass-light); }
       .form-status { margin: 16px 0 0; font-family: var(--sans); font-size: 12px; line-height: 1.5; }
 
-      .questions { padding: clamp(90px, 11vw, 170px) clamp(24px, 7vw, 110px); display: grid; grid-template-columns: 0.72fr 1.28fr; gap: clamp(70px, 10vw, 160px); background: var(--paper-light); }
+      .questions { padding: clamp(90px, 9vw, 140px) clamp(24px, 7vw, 110px); display: grid; grid-template-columns: 0.72fr 1.28fr; gap: clamp(60px, 8vw, 120px); background: var(--paper-light); }
       .faq-list { border-top: 1px solid var(--line-light); }
       .faq-list details { border-bottom: 1px solid var(--line-light); }
       .faq-list summary { min-height: 92px; display: grid; grid-template-columns: 42px 1fr 24px; align-items: center; gap: 18px; cursor: pointer; font-family: var(--sans); font-size: 14px; font-weight: 600; letter-spacing: 0.07em; list-style: none; text-transform: uppercase; }
@@ -354,12 +355,22 @@ const canonicalUrl = "https://pixelfox.design/concepts/law/";
         .inquiry { grid-template-columns: 1fr 0.85fr; gap: 60px; }
       }
 
+      @media (min-width: 781px) and (max-height: 760px) {
+        .hero-copy { padding: 70px clamp(48px, 9vw, 115px) 48px; }
+        .eyebrow { margin-bottom: 24px; }
+        h1 { font-size: clamp(62px, 7.35vw, 96px); line-height: 0.91; }
+        .hero-bottom { margin-top: 34px; padding-top: 18px; }
+        .hero-bottom p { font-size: 18px; }
+        .hero-rail { display: none; }
+        .image-note { bottom: 34px; }
+      }
+
       @media (max-width: 780px) {
         html { scroll-padding-top: 74px; scroll-behavior: auto; }
         body { font-size: 16px; }
         .concept-bar { min-height: 30px; justify-content: center; font-size: 9px; text-align: center; }
         .concept-bar a { display: none; }
-        .site-header { position: sticky; top: 0; min-height: 74px; padding-inline: 16px; background: rgba(21,34,27,0.98); }
+        .site-header { position: sticky; top: 0; min-height: 74px; padding-inline: 16px; background: var(--green); }
         .monogram { width: 42px; height: 42px; font-size: 16px; }
         .wordmark { font-size: 17px; }
         .wordmark small { font-size: 8px; }
@@ -373,24 +384,24 @@ const canonicalUrl = "https://pixelfox.design/concepts/law/";
         .mobile-nav nav a { min-height: 50px; display: flex; align-items: center; border-bottom: 1px solid var(--line-dark); font-size: 20px; }
         .hero, .hero-copy { min-height: calc(100svh - 104px); }
         .hero-frame { inset: 12px; }
-        .hero-copy { padding: 94px 30px 60px; justify-content: flex-end; }
+        .hero-copy { padding: 82px 30px 54px; justify-content: flex-end; }
         .hero-image img { object-position: 60% center; }
         .hero-shade { background: linear-gradient(180deg, rgba(8,12,9,0.25), rgba(8,12,9,0.88) 72%); }
         .eyebrow, .section-label { margin-bottom: 24px; font-size: 10px; }
-        h1 { font-size: clamp(56px, 15.8vw, 72px); line-height: 0.94; }
-        .hero-bottom { margin-top: 36px; grid-template-columns: 1fr; gap: 28px; }
-        .hero-bottom p { font-size: 17px; }
+        h1 { font-size: clamp(52px, 14.8vw, 66px); line-height: 0.95; }
+        .hero-bottom { margin-top: 32px; grid-template-columns: 1fr; gap: 22px; }
+        .hero-bottom p { font-size: 16px; }
         .hero-bottom a { min-width: 0; }
         .hero-rail { display: none; }
         .image-note { right: 25px; bottom: 22px; font-size: 8px; }
-        .introduction, .practice, .principles, .inquiry, .questions { padding: 76px 22px; }
+        .introduction, .practice, .principles, .inquiry, .questions { padding: 66px 22px; }
         .introduction { display: block; }
-        .roman { margin-bottom: 34px; font-size: 72px; }
+        .roman { margin-bottom: 26px; font-size: 64px; }
         .introduction h2, .practice h2, .consultation h2, .principles h2, .inquiry h2, .questions h2 { font-size: clamp(48px, 13.8vw, 62px); }
-        .intro-copy { padding-top: 46px; }
+        .intro-copy { padding-top: 36px; }
         .intro-copy .lead { font-size: 21px; }
         .practice-head { display: block; }
-        .practice-list { margin-top: 54px; }
+        .practice-list { margin-top: 44px; }
         .practice-list a { min-height: 0; padding: 26px 0; grid-template-columns: 34px 1fr 24px; gap: 12px; }
         .practice-list strong { font-size: 29px; }
         .practice-list small { grid-column: 2; font-size: 14px; }
@@ -398,28 +409,28 @@ const canonicalUrl = "https://pixelfox.design/concepts/law/";
         .practice-list a:hover, .practice-list a:focus-visible { margin-inline: -12px; padding-inline: 12px; }
         .consultation { display: flex; flex-direction: column; }
         .consultation-image { min-height: 0; aspect-ratio: 4 / 5; }
-        .consultation-copy { padding: 76px 22px; }
-        .consultation-lead { margin: 32px 0 44px; font-size: 20px; }
+        .consultation-copy { padding: 66px 22px; }
+        .consultation-lead { margin: 28px 0 38px; font-size: 20px; }
         .consultation li { grid-template-columns: 42px 1fr; }
         .consultation li strong { font-size: 20px; }
-        .desk-feature, .desk-overlay { min-height: 680px; }
+        .desk-feature, .desk-overlay { min-height: 620px; }
         .desk-feature img { object-position: 58% center; }
         .desk-feature::after { background: linear-gradient(180deg, rgba(11,16,12,0.34), rgba(11,16,12,0.88)); }
         .desk-overlay { padding: 48px 22px; }
         .desk-overlay h2 { font-size: clamp(54px, 14.5vw, 68px); }
-        .principle-grid { margin-top: 58px; grid-template-columns: 1fr; }
+        .principle-grid { margin-top: 48px; grid-template-columns: 1fr; }
         .principle-grid article { min-height: 0; padding: 26px 0 30px; border-right: 0; border-bottom: 1px solid var(--line-light); }
         .principle-grid article:last-child { border-bottom: 0; }
         .principle-grid h3 { margin: 38px 0 12px; }
-        .inquiry { grid-template-columns: 1fr; gap: 52px; }
-        .seal { width: 104px; height: 104px; margin-bottom: 42px; font-size: 26px; }
+        .inquiry { grid-template-columns: 1fr; gap: 44px; }
+        .seal { width: 96px; height: 96px; margin-bottom: 34px; font-size: 25px; }
         .inquiry-copy > p:not(.section-label) { font-size: 18px; }
         .inquiry-form { padding: 28px 20px; box-shadow: 9px 9px 0 rgba(16,19,15,0.28); }
         .inquiry-form input, .inquiry-form select, .inquiry-form textarea { font-size: 16px; }
-        .questions { grid-template-columns: 1fr; gap: 48px; }
+        .questions { grid-template-columns: 1fr; gap: 40px; }
         .faq-list summary { min-height: 84px; grid-template-columns: 30px 1fr 18px; gap: 10px; font-size: 12px; line-height: 1.45; }
         .faq-list details > p { margin: 0 0 26px 40px; font-size: 15px; }
-        footer { padding: 64px 22px 30px; }
+        footer { padding: 56px 22px 30px; }
         .footer-mark { font-size: 76px; }
         .footer-name { font-size: 52px; }
         footer nav { margin: 52px 0 36px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 22px; }
