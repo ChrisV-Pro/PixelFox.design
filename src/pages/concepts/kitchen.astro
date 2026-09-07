@@ -9,7 +9,7 @@ const description = "A clean, modern Scandinavian-inspired kitchen remodeling we
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
-    <meta name="theme-color" content="#0754c6" />
+    <meta name="theme-color" content="#522548" />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:type" content="website" />
@@ -372,14 +372,14 @@ const description = "A clean, modern Scandinavian-inspired kitchen remodeling we
 
     <style>
       :root {
-        --blue: #0754c6;
-        --blue-dark: #053b8c;
-        --yellow: #ffd324;
-        --ink: #111111;
-        --paper: #ffffff;
-        --warm: #f4f2eb;
-        --line: #c9c7bf;
-        --muted: #686761;
+        --aubergine: #522548;
+        --aubergine-dark: #34142d;
+        --celery: #cbef43;
+        --ink: #141314;
+        --paper: #fffdf8;
+        --warm: #ece9e0;
+        --line: #c8c3b8;
+        --muted: #65605f;
         --font: "Aptos", "Trebuchet MS", sans-serif;
         --display: "Bahnschrift", "Aptos Display", "Trebuchet MS", sans-serif;
         --gutter: clamp(20px, 4vw, 72px);
@@ -408,46 +408,46 @@ const description = "A clean, modern Scandinavian-inspired kitchen remodeling we
 
       .site-header { position: sticky; z-index: 100; top: 0; width: 100%; min-height: 86px; padding: 0 max(var(--gutter), calc((100vw - var(--page-max)) / 2 + 40px)); display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: clamp(28px, 4vw, 72px); border-bottom: 1px solid var(--ink); background: rgba(255, 255, 255, 0.96); backdrop-filter: blur(14px); }
       .brand { display: flex; align-items: center; gap: 12px; }
-      .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; color: var(--ink); background: var(--yellow); font-family: var(--display); font-size: 23px; font-weight: 800; }
+      .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; color: var(--ink); background: var(--celery); font-family: var(--display); font-size: 23px; font-weight: 800; }
       .brand > span:last-child { display: flex; flex-direction: column; }
       .brand strong { font-family: var(--display); font-size: 24px; letter-spacing: -0.04em; line-height: 1; }
       .brand small { margin-top: 4px; font-size: 7px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
       .desktop-nav { justify-self: center; display: flex; align-items: center; gap: clamp(20px, 2.8vw, 48px); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
       .desktop-nav a { position: relative; padding: 34px 0 32px; }
-      .desktop-nav a::after { position: absolute; right: 0; bottom: 24px; left: 0; height: 2px; background: var(--blue); content: ""; transform: scaleX(0); transform-origin: left; transition: transform 180ms ease; }
+      .desktop-nav a::after { position: absolute; right: 0; bottom: 24px; left: 0; height: 2px; background: var(--aubergine); content: ""; transform: scaleX(0); transform-origin: left; transition: transform 180ms ease; }
       .desktop-nav a:hover::after { transform: scaleX(1); }
       .header-cta, .button { min-height: 50px; padding: 0 22px; display: inline-flex; align-items: center; justify-content: center; gap: 28px; border: 1px solid currentColor; font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
-      .header-cta { color: var(--paper); background: var(--blue); }
+      .header-cta { color: var(--paper); background: var(--aubergine); }
       .header-cta span { font-size: 18px; }
       .mobile-menu { display: none; }
 
       .hero { width: min(100%, var(--wide-max)); height: clamp(560px, calc(100svh - 116px), 860px); margin-inline: auto; display: grid; grid-template-columns: minmax(520px, 0.96fr) minmax(0, 1.04fr); border-bottom: 1px solid var(--ink); }
       .hero-copy { min-width: 0; padding: clamp(54px, 5vw, 90px) clamp(38px, 5vw, 86px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; background: var(--warm); }
-      .eyebrow { margin-bottom: 24px; color: var(--blue); font-size: 10px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
+      .eyebrow { margin-bottom: 24px; color: var(--aubergine); font-size: 10px; font-weight: 800; letter-spacing: 0.15em; text-transform: uppercase; }
       .hero h1 { max-width: 850px; font-size: clamp(64px, 7vw, 118px); }
-      .hero h1 span { color: var(--blue); }
+      .hero h1 span { color: var(--aubergine); }
       .hero-intro { max-width: 620px; margin: 34px 0 36px; font-size: clamp(17px, 1.35vw, 21px); line-height: 1.55; }
       .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 22px; }
-      .button--blue { color: var(--paper); background: var(--blue); border-color: var(--blue); }
+      .button--blue { color: var(--paper); background: var(--aubergine); border-color: var(--aubergine); }
       .button--black { color: var(--paper); background: var(--ink); border-color: var(--ink); }
       .text-link { padding-bottom: 5px; border-bottom: 2px solid var(--ink); font-size: 10px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
       .text-link span { margin-left: 12px; }
       .concept-note { width: min(100%, 620px); margin: auto 0 0; padding-top: 22px; display: grid; grid-template-columns: 95px 1fr; gap: 22px; border-top: 1px solid var(--line); font-size: 12px; }
-      .concept-note strong { color: var(--blue); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; }
+      .concept-note strong { color: var(--aubergine); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; }
       .hero-image { position: relative; min-width: 0; margin: 0; overflow: hidden; background: #ddd8cb; }
       .hero-image picture, .hero-image img { width: 100%; height: 100%; }
       .hero-image img { object-fit: cover; object-position: 61% center; }
       .hero-image figcaption { position: absolute; right: 0; bottom: 0; padding: 10px 14px; color: var(--paper); background: var(--ink); font-size: 8px; letter-spacing: 0.1em; text-transform: uppercase; }
 
-      .service-rail { padding: 0 max(var(--gutter), calc((100vw - var(--page-max)) / 2 + 40px)); display: grid; grid-template-columns: repeat(4, 1fr); color: var(--paper); background: var(--blue); }
+      .service-rail { padding: 0 max(var(--gutter), calc((100vw - var(--page-max)) / 2 + 40px)); display: grid; grid-template-columns: repeat(4, 1fr); color: var(--paper); background: var(--aubergine); }
       .service-rail p { min-height: 110px; margin: 0; padding: 24px 28px; display: grid; grid-template-columns: auto 1fr; align-content: center; gap: 2px 18px; border-right: 1px solid rgba(255,255,255,0.32); font-size: 12px; }
       .service-rail p:last-child { border-right: 0; }
-      .service-rail span { grid-row: 1 / 3; color: var(--yellow); font-size: 10px; font-weight: 800; }
+      .service-rail span { grid-row: 1 / 3; color: var(--celery); font-size: 10px; font-weight: 800; }
       .service-rail strong { font-family: var(--display); font-size: 20px; letter-spacing: -0.02em; }
 
       .section { padding: clamp(72px, 7vw, 128px) max(var(--gutter), calc((100vw - var(--page-max)) / 2 + 40px)); }
       .statement { display: grid; grid-template-columns: 120px minmax(0, 1.3fr) minmax(320px, 0.7fr); align-items: end; gap: clamp(34px, 5vw, 90px); }
-      .section-number { width: 92px; height: 92px; display: grid; place-items: center; background: var(--yellow); font-family: var(--display); font-size: 28px; font-weight: 800; }
+      .section-number { width: 92px; height: 92px; display: grid; place-items: center; background: var(--celery); font-family: var(--display); font-size: 28px; font-weight: 800; }
       .statement h2 { max-width: 1120px; font-size: clamp(50px, 6vw, 94px); }
       .statement-copy { max-width: 600px; margin: 0; font-size: 17px; line-height: 1.7; }
 
@@ -465,18 +465,18 @@ const description = "A clean, modern Scandinavian-inspired kitchen remodeling we
       .project-card img { width: 100%; height: 100%; object-fit: cover; transition: transform 500ms ease; }
       .project-card:hover img { transform: scale(1.025); }
       .project-copy { min-width: 0; padding: clamp(26px, 3vw, 46px); display: flex; flex-direction: column; align-items: flex-start; }
-      .project-copy > span { margin-bottom: 22px; color: var(--blue); font-size: 9px; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; }
+      .project-copy > span { margin-bottom: 22px; color: var(--aubergine); font-size: 9px; font-weight: 800; letter-spacing: 0.13em; text-transform: uppercase; }
       .project-copy h3 { font-size: clamp(42px, 4.8vw, 72px); letter-spacing: -0.045em; }
       .project-copy p { max-width: 580px; margin: 20px 0 34px; line-height: 1.65; }
       .project-copy button { width: 100%; min-height: 48px; margin-top: auto; padding: 0; display: flex; align-items: center; justify-content: space-between; border: 0; border-top: 1px solid var(--ink); background: transparent; font-size: 9px; font-weight: 800; letter-spacing: 0.11em; text-align: left; text-transform: uppercase; }
       .project-copy button span { font-size: 20px; font-weight: 400; }
 
-      .process { display: grid; grid-template-columns: minmax(360px, 0.72fr) minmax(0, 1.28fr); gap: clamp(60px, 9vw, 160px); color: var(--paper); background: var(--blue); }
-      .process .eyebrow { color: var(--yellow); }
+      .process { display: grid; grid-template-columns: minmax(360px, 0.72fr) minmax(0, 1.28fr); gap: clamp(60px, 9vw, 160px); color: var(--paper); background: var(--aubergine); }
+      .process .eyebrow { color: var(--celery); }
       .process header > p:last-child { max-width: 520px; margin: 30px 0 0; }
       .process ol { margin: 0; padding: 0; list-style: none; border-top: 1px solid rgba(255,255,255,0.42); }
       .process li { padding: 30px 0; display: grid; grid-template-columns: 70px 1fr; gap: 26px; border-bottom: 1px solid rgba(255,255,255,0.42); }
-      .process li > span { width: 48px; height: 48px; display: grid; place-items: center; color: var(--ink); background: var(--yellow); font-size: 11px; font-weight: 800; }
+      .process li > span { width: 48px; height: 48px; display: grid; place-items: center; color: var(--ink); background: var(--celery); font-size: 11px; font-weight: 800; }
       .process h3 { font-size: clamp(28px, 2.8vw, 42px); letter-spacing: -0.035em; line-height: 1; }
       .process li p { max-width: 660px; margin: 12px 0 0; color: rgba(255,255,255,0.8); }
 
@@ -487,18 +487,18 @@ const description = "A clean, modern Scandinavian-inspired kitchen remodeling we
       .material-selector { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--ink); }
       .material-selector button { min-width: 0; min-height: 128px; padding: 15px; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-between; border: 0; border-right: 1px solid var(--ink); background: var(--paper); font-size: 10px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; }
       .material-selector button:last-child { border-right: 0; }
-      .material-selector button.is-active { color: var(--paper); background: var(--blue); }
+      .material-selector button.is-active { color: var(--paper); background: var(--aubergine); }
       .material-selector button span { color: var(--muted); }
-      .material-selector button.is-active span { color: var(--yellow); }
+      .material-selector button.is-active span { color: var(--celery); }
       .swatch { width: 42px; height: 42px; display: block; border: 1px solid var(--ink); background: #d7b887; }
       .swatch--blue { background: #174982; }
       .swatch--black { background: #191919; }
       .material-result { padding: 26px; border: 1px solid var(--ink); border-top: 0; }
-      .material-result span { display: block; margin-bottom: 9px; color: var(--blue); font-size: 9px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
+      .material-result span { display: block; margin-bottom: 9px; color: var(--aubergine); font-size: 9px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
       .material-result strong { font-family: var(--display); font-size: 28px; letter-spacing: -0.03em; }
       .material-result p { margin: 8px 0 0; color: var(--muted); }
 
-      .planner { background: var(--yellow); }
+      .planner { background: var(--celery); }
       .planner > header { margin-bottom: 52px; display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(320px, 0.8fr); align-items: end; gap: 70px; }
       .planner .eyebrow { color: var(--ink); }
       .planner > header > p:last-child { max-width: 560px; margin: 0; }
@@ -508,15 +508,15 @@ const description = "A clean, modern Scandinavian-inspired kitchen remodeling we
       .choice-grid { display: grid; grid-template-columns: repeat(3, 1fr); border: 1px solid var(--ink); }
       .choice-grid button { min-height: 112px; padding: 20px; display: flex; flex-direction: column; align-items: flex-start; justify-content: center; border: 0; border-right: 1px solid var(--ink); background: var(--paper); text-align: left; }
       .choice-grid button:last-child { border-right: 0; }
-      .choice-grid button.is-active { color: var(--paper); background: var(--blue); }
+      .choice-grid button.is-active { color: var(--paper); background: var(--aubergine); }
       .choice-grid span { font-family: var(--display); font-size: 24px; font-weight: 700; letter-spacing: -0.03em; }
       .choice-grid small { margin-top: 8px; color: var(--muted); font-size: 10px; }
       .choice-grid button.is-active small { color: rgba(255,255,255,0.76); }
       .estimate { padding: clamp(32px, 4vw, 64px); display: flex; flex-direction: column; align-items: flex-start; background: var(--warm); }
-      .estimate > span { color: var(--blue); font-size: 9px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
+      .estimate > span { color: var(--aubergine); font-size: 9px; font-weight: 800; letter-spacing: 0.12em; text-transform: uppercase; }
       .estimate > strong { margin: 20px 0 30px; font-family: var(--display); font-size: clamp(44px, 4.2vw, 66px); letter-spacing: -0.055em; line-height: 0.95; }
       .estimate-bar { width: 100%; height: 12px; background: #d8d5ca; }
-      .estimate-bar i { width: 30%; height: 100%; display: block; background: var(--blue); transition: width 260ms ease; }
+      .estimate-bar i { width: 30%; height: 100%; display: block; background: var(--aubergine); transition: width 260ms ease; }
       .estimate dl { width: 100%; margin: 30px 0 40px; }
       .estimate dl div { padding: 14px 0; display: flex; justify-content: space-between; gap: 30px; border-top: 1px solid var(--line); }
       .estimate dt { font-size: 11px; font-weight: 800; text-transform: uppercase; }
@@ -524,12 +524,12 @@ const description = "A clean, modern Scandinavian-inspired kitchen remodeling we
       .estimate .button { margin-top: auto; }
 
       .principles { color: var(--paper); background: var(--ink); }
-      .principles .eyebrow { color: var(--yellow); }
+      .principles .eyebrow { color: var(--celery); }
       .principles h2 { max-width: 1050px; }
       .principle-grid { margin-top: 70px; display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid rgba(255,255,255,0.4); border-bottom: 1px solid rgba(255,255,255,0.4); }
       .principle-grid article { min-height: 270px; padding: 30px; border-right: 1px solid rgba(255,255,255,0.4); }
       .principle-grid article:last-child { border-right: 0; }
-      .principle-grid span { color: var(--yellow); font-size: 10px; font-weight: 800; }
+      .principle-grid span { color: var(--celery); font-size: 10px; font-weight: 800; }
       .principle-grid h3 { margin-top: 62px; font-size: clamp(32px, 3.4vw, 50px); }
       .principle-grid p { max-width: 450px; margin: 18px 0 0; color: rgba(255,255,255,0.74); }
 
@@ -538,32 +538,32 @@ const description = "A clean, modern Scandinavian-inspired kitchen remodeling we
       .faq details { border-bottom: 1px solid var(--ink); }
       .faq summary { min-height: 82px; padding: 22px 54px 22px 0; display: flex; align-items: center; position: relative; list-style: none; font-family: var(--display); font-size: 22px; font-weight: 700; letter-spacing: -0.025em; }
       .faq summary::-webkit-details-marker { display: none; }
-      .faq summary::after { position: absolute; right: 4px; color: var(--blue); font-size: 24px; content: "+"; }
+      .faq summary::after { position: absolute; right: 4px; color: var(--aubergine); font-size: 24px; content: "+"; }
       .faq details[open] summary::after { content: "-"; }
       .faq details p { max-width: 720px; margin: 0 0 26px; color: var(--muted); }
 
-      .contact { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr); align-items: end; gap: clamp(50px, 8vw, 140px); color: var(--paper); background: var(--blue); }
-      .contact .eyebrow { color: var(--yellow); }
+      .contact { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(420px, 0.95fr); align-items: end; gap: clamp(50px, 8vw, 140px); color: var(--paper); background: var(--aubergine); }
+      .contact .eyebrow { color: var(--celery); }
       .contact h2 { max-width: 1050px; }
       .contact label { display: block; margin-bottom: 10px; font-size: 9px; font-weight: 800; letter-spacing: 0.11em; text-transform: uppercase; }
       .contact form > div { display: grid; grid-template-columns: 1fr auto; }
       .contact input { min-width: 0; min-height: 56px; padding: 0 17px; border: 1px solid var(--paper); background: transparent; font-size: 16px; }
       .contact input::placeholder { color: rgba(255,255,255,0.65); }
-      .contact button { min-height: 56px; padding: 0 24px; border: 1px solid var(--paper); color: var(--ink); background: var(--yellow); font-size: 9px; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; }
+      .contact button { min-height: 56px; padding: 0 24px; border: 1px solid var(--paper); color: var(--ink); background: var(--celery); font-size: 9px; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; }
       .contact form > p { margin: 10px 0 0; font-size: 10px; }
 
       footer { padding: 52px max(var(--gutter), calc((100vw - var(--page-max)) / 2 + 40px)) 32px; display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 42px; color: var(--paper); background: var(--ink); }
       .footer-brand { display: flex; align-items: center; gap: 12px; font-family: var(--display); font-size: 28px; letter-spacing: -0.04em; }
-      .footer-brand span { width: 40px; height: 40px; display: grid; place-items: center; color: var(--ink); background: var(--yellow); font-size: 22px; }
+      .footer-brand span { width: 40px; height: 40px; display: grid; place-items: center; color: var(--ink); background: var(--celery); font-size: 22px; }
       footer nav { display: flex; gap: 30px; font-size: 9px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; }
       footer > p { grid-column: 1 / -1; max-width: 1100px; margin: 0; padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.3); color: rgba(255,255,255,0.7); font-size: 9px; letter-spacing: 0.07em; text-transform: uppercase; }
 
-      dialog { width: min(560px, calc(100% - 32px)); padding: 42px; border: 1px solid var(--ink); color: var(--ink); background: var(--paper); box-shadow: 20px 20px 0 var(--yellow); }
+      dialog { width: min(560px, calc(100% - 32px)); padding: 42px; border: 1px solid var(--ink); color: var(--ink); background: var(--paper); box-shadow: 20px 20px 0 var(--celery); }
       dialog::backdrop { background: rgba(0,0,0,0.62); }
       dialog > button:first-child { float: right; padding: 0 0 3px; border: 0; border-bottom: 1px solid var(--ink); background: transparent; font-size: 9px; font-weight: 800; text-transform: uppercase; }
       dialog h2 { font-size: 70px; }
       dialog > p:not(.eyebrow) { margin: 24px 0 32px; }
-      .toast { position: fixed; z-index: 300; right: 20px; bottom: 20px; max-width: min(420px, calc(100% - 40px)); margin: 0; padding: 16px 20px; color: var(--ink); background: var(--yellow); border: 1px solid var(--ink); font-size: 12px; opacity: 0; transform: translateY(18px); transition: 180ms ease; pointer-events: none; }
+      .toast { position: fixed; z-index: 300; right: 20px; bottom: 20px; max-width: min(420px, calc(100% - 40px)); margin: 0; padding: 16px 20px; color: var(--ink); background: var(--celery); border: 1px solid var(--ink); font-size: 12px; opacity: 0; transform: translateY(18px); transition: 180ms ease; pointer-events: none; }
       .toast.is-visible { opacity: 1; transform: translateY(0); }
 
       @media (min-width: 2200px) {
@@ -686,7 +686,7 @@ const description = "A clean, modern Scandinavian-inspired kitchen remodeling we
         .contact input { border-bottom: 0; }
         footer { padding: 44px 20px 28px; grid-template-columns: 1fr; gap: 30px; }
         footer nav { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-        dialog { padding: 32px 24px; box-shadow: 10px 10px 0 var(--yellow); }
+        dialog { padding: 32px 24px; box-shadow: 10px 10px 0 var(--celery); }
         dialog h2 { font-size: 56px; }
       }
 
