@@ -61,6 +61,8 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
               <button type="button" data-category-link="rest">Rest</button>
               <button type="button" data-category-link="feed">Feed</button>
               <button type="button" data-category-link="play">Play</button>
+              <button type="button" data-category-link="care">Care</button>
+              <button type="button" data-category-link="travel">Travel</button>
               <a href="#why">Our approach</a>
             </nav>
           </details>
@@ -71,10 +73,10 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
         <form id="search-form" role="search">
           <label for="shop-search">What are you looking for?</label>
           <div>
-            <input id="shop-search" name="query" type="search" placeholder="Try bed, bowl, walking..." autocomplete="off" />
+            <input id="shop-search" name="query" type="search" placeholder="Try bed, bowl, carrier..." autocomplete="off" />
             <button type="submit">Search</button>
           </div>
-          <p id="search-status" role="status">Search this four-product concept collection.</p>
+          <p id="search-status" role="status">Search this eight-product concept collection.</p>
         </form>
       </div>
 
@@ -84,43 +86,50 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
         <button type="button" data-category-link="rest">Rest</button>
         <button type="button" data-category-link="feed">Feed</button>
         <button type="button" data-category-link="play">Play</button>
+        <button type="button" data-category-link="care">Care</button>
+        <button type="button" data-category-link="travel">Travel</button>
         <a href="#why">Why Sunday Mudroom</a>
       </nav>
     </header>
 
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
-        <picture>
-          <source
-            sizes="100vw"
-            srcset="/images/sunday-mudroom/hero-900.avif 900w, /images/sunday-mudroom/hero-1600.avif 1600w"
-            type="image/avif"
-          />
-          <source
-            sizes="100vw"
-            srcset="/images/sunday-mudroom/hero-900.webp 900w, /images/sunday-mudroom/hero-1600.webp 1600w"
-            type="image/webp"
-          />
-          <img
-            alt="Woman helping a happy dog into an earthy green harness beside coordinated pet products in a warm mudroom"
-            decoding="async"
-            fetchpriority="high"
-            height="1067"
-            src="/images/sunday-mudroom/hero-1600.webp"
-            width="1600"
-          />
-        </picture>
-        <div class="hero-card">
-          <p class="overline">The entryway edit</p>
-          <h1 id="hero-title">Good pet things, chosen for home.</h1>
-          <p>Earthy, useful essentials imagined for family routines, muddy paws, and the rooms everyone actually lives in.</p>
+        <div class="hero-copy">
+          <p class="overline">Pet goods for real homes</p>
+          <h1 id="hero-title">A better-looking life with pets.</h1>
+          <p>Everyday beds, bowls, walking gear, and care essentials in calm materials made to feel at home in your home.</p>
           <div class="hero-actions">
-            <a class="primary-button" href="#shop">Shop the collection</a>
-            <button type="button" data-category-link="walk">Shop walking</button>
+            <a class="primary-button" href="#shop">Shop all eight</a>
+            <button type="button" data-category-link="travel">Shop travel</button>
           </div>
-          <small>Independent fictional ecommerce concept. No purchases are possible.</small>
+          <div class="hero-note">
+            <strong>Sunday edit 01</strong>
+            <span>Eight coordinated concept goods for walk, rest, feed, play, care, and travel.</span>
+          </div>
         </div>
-        <p class="photo-credit">Original AI-generated concept photography</p>
+        <figure class="hero-visual">
+          <picture>
+            <source
+              sizes="(max-width: 760px) 100vw, 56vw"
+              srcset="/images/sunday-mudroom/hero-900.avif 900w, /images/sunday-mudroom/hero-1600.avif 1600w"
+              type="image/avif"
+            />
+            <source
+              sizes="(max-width: 760px) 100vw, 56vw"
+              srcset="/images/sunday-mudroom/hero-900.webp 900w, /images/sunday-mudroom/hero-1600.webp 1600w"
+              type="image/webp"
+            />
+            <img
+              alt="Woman helping a happy dog into an earthy green harness beside coordinated pet products in a warm mudroom"
+              decoding="async"
+              fetchpriority="high"
+              height="1067"
+              src="/images/sunday-mudroom/hero-1600.webp"
+              width="1600"
+            />
+          </picture>
+          <figcaption>Original AI-generated concept photography</figcaption>
+        </figure>
       </section>
 
       <section class="service-row" aria-label="Concept store benefits">
@@ -134,9 +143,9 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
         <div class="section-heading">
           <div>
             <p class="overline">Shop the concept</p>
-            <h2 id="shop-title">The everyday collection</h2>
+            <h2 id="shop-title">The everyday shop</h2>
           </div>
-          <p>Four coordinated essentials, styled like the rest of the home. Prices and product details are illustrative.</p>
+          <p>Eight coordinated essentials with straightforward categories, useful details, and room to browse. Prices and product details are illustrative.</p>
         </div>
 
         <div class="filter-bar" aria-label="Filter products">
@@ -145,7 +154,9 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
           <button class="filter-chip" type="button" data-filter="rest" aria-pressed="false">Rest</button>
           <button class="filter-chip" type="button" data-filter="feed" aria-pressed="false">Feed</button>
           <button class="filter-chip" type="button" data-filter="play" aria-pressed="false">Play</button>
-          <span id="product-count" aria-live="polite">4 concept products</span>
+          <button class="filter-chip" type="button" data-filter="care" aria-pressed="false">Care</button>
+          <button class="filter-chip" type="button" data-filter="travel" aria-pressed="false">Travel</button>
+          <span id="product-count" aria-live="polite">8 concept products</span>
         </div>
 
         <div class="product-grid">
@@ -156,12 +167,11 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
                 <source srcset="/images/sunday-mudroom/hearth-bed-520.webp 520w, /images/sunday-mudroom/hearth-bed-900.webp 900w" type="image/webp" />
                 <img alt="Moss green quilted rectangular pet bed" decoding="async" height="900" loading="lazy" src="/images/sunday-mudroom/hearth-bed-520.webp" width="900" />
               </picture>
-              <span class="product-tag">Rest</span>
               <button class="image-action" type="button" data-preview="The Hearth Bed">View details</button>
             </div>
             <div class="product-info">
               <div>
-                <p class="product-kicker">Washed cotton concept</p>
+                <p class="product-kicker">Rest / Washed cotton</p>
                 <h3>The Hearth Bed</h3>
                 <p class="product-color">Moss / Oat piping</p>
               </div>
@@ -177,12 +187,11 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
                 <source srcset="/images/sunday-mudroom/stoneware-bowls-520.webp 520w, /images/sunday-mudroom/stoneware-bowls-900.webp 900w" type="image/webp" />
                 <img alt="Two speckled cream stoneware pet bowls on a walnut tray" decoding="async" height="900" loading="lazy" src="/images/sunday-mudroom/stoneware-bowls-520.webp" width="900" />
               </picture>
-              <span class="product-tag">Feed</span>
               <button class="image-action" type="button" data-preview="The Stoneware Pair">View details</button>
             </div>
             <div class="product-info">
               <div>
-                <p class="product-kicker">Speckled ceramic concept</p>
+                <p class="product-kicker">Feed / Speckled ceramic</p>
                 <h3>The Stoneware Pair</h3>
                 <p class="product-color">Cream / Walnut tray</p>
               </div>
@@ -198,12 +207,11 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
                 <source srcset="/images/sunday-mudroom/market-walk-set-520.webp 520w, /images/sunday-mudroom/market-walk-set-900.webp 900w" type="image/webp" />
                 <img alt="Moss canvas harness, cotton rope lead, and oat treat pouch" decoding="async" height="900" loading="lazy" src="/images/sunday-mudroom/market-walk-set-520.webp" width="900" />
               </picture>
-              <span class="product-tag product-tag--clay">Walk</span>
               <button class="image-action" type="button" data-preview="The Market Walk Set">View details</button>
             </div>
             <div class="product-info">
               <div>
-                <p class="product-kicker">Three-piece concept set</p>
+                <p class="product-kicker">Walk / Three-piece set</p>
                 <h3>The Market Walk Set</h3>
                 <p class="product-color">Moss / Cognac / Oat</p>
               </div>
@@ -219,18 +227,97 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
                 <source srcset="/images/sunday-mudroom/woven-play-set-520.webp 520w, /images/sunday-mudroom/woven-play-set-900.webp 900w" type="image/webp" />
                 <img alt="Three woven rope pet toys in clay, oatmeal, and muted mustard" decoding="async" height="900" loading="lazy" src="/images/sunday-mudroom/woven-play-set-520.webp" width="900" />
               </picture>
-              <span class="product-tag product-tag--mustard">Play</span>
               <button class="image-action" type="button" data-preview="The Woven Play Set">View details</button>
             </div>
             <div class="product-info">
               <div>
-                <p class="product-kicker">Three-piece concept set</p>
+                <p class="product-kicker">Play / Woven cotton</p>
                 <h3>The Woven Play Set</h3>
                 <p class="product-color">Clay / Oat / Mustard</p>
               </div>
               <p class="price">$38 <small>Concept price</small></p>
             </div>
             <button class="quick-add" type="button" data-add="The Woven Play Set" data-price="$38">Quick add <span>+</span></button>
+          </article>
+
+          <article class="product-card" data-product-card data-category="travel" data-search="weekend carrier travel tote canvas oat moss cognac">
+            <div class="product-image">
+              <picture>
+                <source srcset="/images/sunday-mudroom/weekend-carrier-520.avif 520w, /images/sunday-mudroom/weekend-carrier-900.avif 900w" type="image/avif" />
+                <source srcset="/images/sunday-mudroom/weekend-carrier-520.webp 520w, /images/sunday-mudroom/weekend-carrier-900.webp 900w" type="image/webp" />
+                <img alt="Oat canvas pet travel carrier with cognac straps and moss cushion" decoding="async" height="900" loading="lazy" src="/images/sunday-mudroom/weekend-carrier-520.webp" width="900" />
+              </picture>
+              <button class="image-action" type="button" data-preview="The Weekend Carrier">View details</button>
+            </div>
+            <div class="product-info">
+              <div>
+                <p class="product-kicker">Travel / Waxed canvas</p>
+                <h3>The Weekend Carrier</h3>
+                <p class="product-color">Oat / Moss cushion</p>
+              </div>
+              <p class="price">$148 <small>Concept price</small></p>
+            </div>
+            <button class="quick-add" type="button" data-add="The Weekend Carrier" data-price="$148">Quick add <span>+</span></button>
+          </article>
+
+          <article class="product-card" data-product-card data-category="care" data-search="grooming care brush towel paw balm wash mitt clay sage walnut">
+            <div class="product-image">
+              <picture>
+                <source srcset="/images/sunday-mudroom/grooming-kit-520.avif 520w, /images/sunday-mudroom/grooming-kit-900.avif 900w" type="image/avif" />
+                <source srcset="/images/sunday-mudroom/grooming-kit-520.webp 520w, /images/sunday-mudroom/grooming-kit-900.webp 900w" type="image/webp" />
+                <img alt="Walnut pet brush, clay towel, sage balm jar, and cotton wash mitt" decoding="async" height="900" loading="lazy" src="/images/sunday-mudroom/grooming-kit-520.webp" width="900" />
+              </picture>
+              <button class="image-action" type="button" data-preview="The Grooming Day Kit">View details</button>
+            </div>
+            <div class="product-info">
+              <div>
+                <p class="product-kicker">Care / Four-piece set</p>
+                <h3>The Grooming Day Kit</h3>
+                <p class="product-color">Clay / Sage / Walnut</p>
+              </div>
+              <p class="price">$54 <small>Concept price</small></p>
+            </div>
+            <button class="quick-add" type="button" data-add="The Grooming Day Kit" data-price="$54">Quick add <span>+</span></button>
+          </article>
+
+          <article class="product-card" data-product-card data-category="feed" data-search="pantry treat crock jar feed speckled ceramic walnut cream">
+            <div class="product-image">
+              <picture>
+                <source srcset="/images/sunday-mudroom/treat-crock-520.avif 520w, /images/sunday-mudroom/treat-crock-900.avif 900w" type="image/avif" />
+                <source srcset="/images/sunday-mudroom/treat-crock-520.webp 520w, /images/sunday-mudroom/treat-crock-900.webp 900w" type="image/webp" />
+                <img alt="Speckled cream stoneware pet treat jar with a walnut lid" decoding="async" height="900" loading="lazy" src="/images/sunday-mudroom/treat-crock-520.webp" width="900" />
+              </picture>
+              <button class="image-action" type="button" data-preview="The Pantry Treat Crock">View details</button>
+            </div>
+            <div class="product-info">
+              <div>
+                <p class="product-kicker">Feed / Stoneware</p>
+                <h3>The Pantry Treat Crock</h3>
+                <p class="product-color">Cream / Walnut lid</p>
+              </div>
+              <p class="price">$46 <small>Concept price</small></p>
+            </div>
+            <button class="quick-add" type="button" data-add="The Pantry Treat Crock" data-price="$46">Quick add <span>+</span></button>
+          </article>
+
+          <article class="product-card" data-product-card data-category="travel" data-search="road trip travel blanket quilt oat moss cognac pouch">
+            <div class="product-image">
+              <picture>
+                <source srcset="/images/sunday-mudroom/travel-blanket-520.avif 520w, /images/sunday-mudroom/travel-blanket-900.avif 900w" type="image/avif" />
+                <source srcset="/images/sunday-mudroom/travel-blanket-520.webp 520w, /images/sunday-mudroom/travel-blanket-900.webp 900w" type="image/webp" />
+                <img alt="Rolled oat quilted pet blanket with moss binding and cognac straps" decoding="async" height="900" loading="lazy" src="/images/sunday-mudroom/travel-blanket-520.webp" width="900" />
+              </picture>
+              <button class="image-action" type="button" data-preview="The Road Trip Quilt">View details</button>
+            </div>
+            <div class="product-info">
+              <div>
+                <p class="product-kicker">Travel / Quilted cotton</p>
+                <h3>The Road Trip Quilt</h3>
+                <p class="product-color">Oat / Moss binding</p>
+              </div>
+              <p class="price">$86 <small>Concept price</small></p>
+            </div>
+            <button class="quick-add" type="button" data-add="The Road Trip Quilt" data-price="$86">Quick add <span>+</span></button>
           </article>
         </div>
       </section>
@@ -240,7 +327,7 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
           <p class="overline">The mudroom set</p>
           <h2 id="collection-title">One calm corner. Every daily essential.</h2>
           <p>Bundle the imagined walking set, bowl pair, and woven toy trio into a coordinated entryway collection.</p>
-          <button class="light-button" type="button" data-add="The Mudroom Bundle" data-price="$176">Add concept bundle</button>
+          <button class="light-button" type="button" data-add="The Mudroom Bundle" data-price="$194">Add concept bundle</button>
           <small>Illustrative bundle and price. No transaction will occur.</small>
         </div>
         <picture>
@@ -372,7 +459,7 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
       button { cursor: pointer; }
       img { width: 100%; display: block; }
       h1, h2, h3, p { margin-top: 0; }
-      h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.045em; }
+      h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.045em; text-wrap: balance; }
       :focus-visible { outline: 3px solid var(--clay); outline-offset: 4px; }
       [hidden] { display: none !important; }
       .skip-link { position: fixed; z-index: 500; top: 12px; left: 12px; padding: 10px 14px; color: var(--paper); background: var(--deep-moss); transform: translateY(-160%); }
@@ -409,51 +496,50 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
       .search-panel button { padding: 0 24px; border: 1px solid var(--moss); color: var(--paper); background: var(--moss); }
       .search-panel p { margin: 10px 0 0; font-size: 11px; }
 
-      .hero { position: relative; min-height: calc(100svh - 162px); overflow: hidden; background: var(--oat); }
-      .hero > picture { position: absolute; inset: 0; }
-      .hero > picture img { height: 100%; object-fit: cover; object-position: center 52%; }
-      .hero::after { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(33, 37, 29, 0.16), transparent 45%); content: ""; pointer-events: none; }
-      .hero-card { position: absolute; z-index: 2; left: clamp(22px, 6vw, 92px); bottom: clamp(22px, 6vw, 76px); width: min(530px, calc(100% - 44px)); padding: clamp(30px, 4vw, 56px); border-radius: 2px 38px 2px 2px; background: rgba(250, 247, 240, 0.95); box-shadow: 0 28px 80px rgba(38, 37, 31, 0.18); }
-      .hero-card h1 { margin-bottom: 20px; font-size: clamp(54px, 5.8vw, 88px); line-height: 0.91; }
-      .hero-card > p:not(.overline) { max-width: 440px; margin-bottom: 28px; font-size: 17px; }
-      .hero-actions { display: flex; align-items: center; gap: 22px; }
+      .hero { height: clamp(520px, calc(100svh - 162px), 840px); display: grid; grid-template-columns: minmax(430px, 0.88fr) minmax(0, 1.12fr); background: var(--oat); border-bottom: 1px solid var(--line); }
+      .hero-copy { min-width: 0; padding: clamp(54px, 7vw, 112px) clamp(36px, 6vw, 92px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+      .hero-copy h1 { max-width: 690px; margin-bottom: 24px; font-size: clamp(58px, 6vw, 94px); line-height: 0.9; }
+      .hero-copy > p:not(.overline) { max-width: 560px; margin-bottom: 34px; font-size: clamp(16px, 1.3vw, 19px); line-height: 1.65; }
+      .hero-visual { min-width: 0; margin: 0; display: grid; grid-template-rows: minmax(0, 1fr) auto; overflow: hidden; background: #d8cbb7; }
+      .hero-visual picture { min-height: 0; overflow: hidden; }
+      .hero-visual img { height: 100%; object-fit: cover; object-position: 61% center; }
+      .hero-visual figcaption { min-height: 32px; padding: 8px 16px; color: rgba(250, 247, 240, 0.86); background: var(--deep-moss); font-size: 8px; letter-spacing: 0.11em; text-align: right; text-transform: uppercase; }
+      .hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 20px; }
       .primary-button, .hero-actions button, .light-button { min-height: 50px; padding: 0 21px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--moss); font-size: 10px; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; }
       .primary-button { color: var(--paper); background: var(--moss); }
       .hero-actions button { padding: 0; border: 0; border-bottom: 1px solid var(--ink); background: transparent; }
-      .hero-card small { margin-top: 24px; display: block; font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; }
-      .photo-credit { position: absolute; z-index: 3; right: 14px; bottom: 12px; margin: 0; padding: 6px 9px; color: var(--paper); background: rgba(38, 50, 41, 0.86); font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; }
+      .hero-note { width: min(100%, 560px); margin-top: clamp(40px, 7vh, 76px); padding-top: 20px; display: grid; grid-template-columns: 120px 1fr; gap: 24px; border-top: 1px solid var(--line); }
+      .hero-note strong { color: var(--clay); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; }
+      .hero-note span { font-family: var(--serif); font-size: 15px; line-height: 1.35; }
       .service-row { min-height: 72px; padding: 14px clamp(18px, 4vw, 64px); display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; background: var(--oat); border-bottom: 1px solid var(--line); }
       .service-row p { margin: 0; padding: 0 22px; border-right: 1px solid var(--line); font-family: var(--serif); font-size: 16px; text-align: center; }
       .service-row p:last-child { border-right: 0; }
       .service-row span { margin-right: 7px; color: var(--clay); font-family: var(--sans); font-size: 9px; }
 
-      .shop-section, .routine-section, .faq-section { padding: clamp(78px, 9vw, 138px) clamp(18px, 4vw, 64px); }
+      .shop-section, .routine-section, .faq-section { padding: clamp(76px, 8vw, 124px) clamp(20px, 5vw, 80px); }
       .section-heading { margin-bottom: 52px; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr); align-items: end; gap: clamp(30px, 8vw, 130px); }
-      .section-heading h2, .collection-copy h2, .why-copy h2, .faq-section h2, .newsletter h2 { margin-bottom: 0; font-size: clamp(50px, 6.2vw, 92px); line-height: 0.94; }
+      .section-heading h2, .collection-copy h2, .why-copy h2, .faq-section h2, .newsletter h2 { margin-bottom: 0; font-size: clamp(46px, 5.4vw, 78px); line-height: 0.97; }
       .section-heading > p { margin-bottom: 4px; font-size: 15px; }
       .filter-bar { margin-bottom: 26px; display: flex; align-items: center; gap: 9px; }
       .filter-chip { min-height: 40px; padding: 0 17px; border: 1px solid var(--line); border-radius: 999px; background: transparent; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
       .filter-chip.is-active { color: var(--paper); background: var(--moss); border-color: var(--moss); }
       #product-count { margin-left: auto; color: rgba(38, 37, 31, 0.68); font-size: 10px; letter-spacing: 0.09em; text-transform: uppercase; }
-      .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 2vw, 28px); }
+      .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 54px clamp(16px, 2vw, 28px); }
       .product-card[hidden] { display: none; }
-      .product-card { min-width: 0; }
-      .product-image { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 160px 160px 12px 12px; background: var(--oat); }
+      .product-card { min-width: 0; display: flex; flex-direction: column; }
+      .product-image { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 22px 22px 6px 6px; background: var(--oat); }
       .product-image picture, .product-image img { width: 100%; height: 100%; display: block; }
       .product-image img { object-fit: cover; transition: transform 450ms ease; }
       .product-card:hover .product-image img { transform: scale(1.035); }
-      .product-tag { position: absolute; top: 16px; left: 16px; padding: 7px 11px; border-radius: 999px; color: var(--paper); background: var(--moss); font-size: 8px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
-      .product-tag--clay { background: var(--clay); }
-      .product-tag--mustard { color: var(--ink); background: var(--mustard); }
       .image-action { position: absolute; right: 12px; bottom: 12px; left: 12px; min-height: 42px; border: 0; border-radius: 999px; background: rgba(250, 247, 240, 0.92); font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0; transform: translateY(8px); transition: 180ms ease; }
       .product-card:hover .image-action, .image-action:focus-visible { opacity: 1; transform: translateY(0); }
-      .product-info { min-height: 132px; padding: 20px 2px 16px; display: flex; justify-content: space-between; gap: 14px; }
-      .product-kicker { margin-bottom: 4px; color: var(--clay); font-size: 8px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-      .product-info h3 { margin-bottom: 5px; font-size: clamp(23px, 2.2vw, 34px); line-height: 1; }
+      .product-info { min-height: 138px; padding: 19px 2px 16px; display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: start; gap: 14px; }
+      .product-kicker { margin-bottom: 7px; color: var(--clay); font-size: 8px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; }
+      .product-info h3 { max-width: 250px; margin-bottom: 8px; font-size: clamp(23px, 1.8vw, 30px); line-height: 1.02; }
       .product-color { margin: 0; color: rgba(38, 37, 31, 0.67); font-size: 11px; }
-      .price { flex: 0 0 auto; margin: 0; font-family: var(--serif); font-size: 20px; text-align: right; }
+      .price { margin: 0; font-family: var(--serif); font-size: 20px; line-height: 1.1; text-align: right; }
       .price small { display: block; font-family: var(--sans); font-size: 7px; letter-spacing: 0.06em; text-transform: uppercase; }
-      .quick-add { width: 100%; min-height: 48px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--ink); background: transparent; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+      .quick-add { width: 100%; min-height: 48px; margin-top: auto; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--ink); background: transparent; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
       .quick-add:hover { color: var(--paper); background: var(--moss); border-color: var(--moss); }
       .quick-add span { font-size: 18px; font-weight: 400; }
 
@@ -464,7 +550,7 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
       .collection-copy > p:not(.overline) { max-width: 520px; margin: 28px 0; }
       .light-button { color: var(--ink); background: var(--paper); border-color: var(--paper); }
       .collection-copy small { margin-top: 16px; max-width: 370px; font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; }
-      .collection-banner picture, .collection-banner img { height: 100%; min-height: 620px; }
+      .collection-banner picture, .collection-banner img { height: 100%; min-height: 540px; }
       .collection-banner img { object-fit: cover; }
 
       .section-heading--center { max-width: 1050px; margin-inline: auto; text-align: center; grid-template-columns: 1fr; gap: 22px; }
@@ -479,7 +565,7 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
       .routine-grid em { margin-top: 20px; padding-bottom: 3px; border-bottom: 1px solid currentColor; font-style: normal; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 
       .why-section { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(420px, 0.9fr); background: var(--paper); }
-      .why-photo { position: relative; min-height: 760px; overflow: hidden; }
+      .why-photo { position: relative; min-height: 680px; overflow: hidden; }
       .why-photo picture, .why-photo img { height: 100%; }
       .why-photo img { object-fit: cover; object-position: 62% center; }
       .why-photo > p { position: absolute; right: 12px; bottom: 10px; margin: 0; padding: 6px 9px; color: var(--paper); background: rgba(38, 50, 41, 0.88); font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; }
@@ -540,11 +626,25 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
       .toast { position: fixed; z-index: 200; right: 20px; bottom: 20px; max-width: min(390px, calc(100% - 40px)); margin: 0; padding: 14px 18px; color: var(--paper); background: var(--deep-moss); font-size: 11px; opacity: 0; transform: translateY(16px); transition: 180ms ease; pointer-events: none; }
       .toast.is-visible { opacity: 1; transform: translateY(0); }
 
-      @media (max-width: 1080px) {
-        .header-main { grid-template-columns: 1fr minmax(230px, 0.7fr) auto; }
-        .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 42px 20px; }
+      @media (max-width: 1180px) {
+        .header-main { grid-template-columns: 1fr minmax(210px, 0.7fr) auto; }
+        .shop-nav { gap: 22px; }
+        .hero { grid-template-columns: minmax(370px, 0.9fr) minmax(0, 1.1fr); }
+        .hero-copy { padding: 56px 42px; }
+        .hero-copy h1 { font-size: clamp(54px, 6.7vw, 76px); }
+        .product-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 48px 20px; }
         .collection-banner { grid-template-columns: 1fr 1fr; }
         .why-copy { padding: 70px 56px; }
+      }
+
+      @media (max-width: 920px) and (min-width: 761px) {
+        .header-main { grid-template-columns: 1fr auto; }
+        .search-trigger { display: none; }
+        .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .hero { grid-template-columns: minmax(330px, 0.9fr) minmax(0, 1.1fr); }
+        .hero-copy { padding: 46px 32px; }
+        .hero-copy h1 { font-size: 56px; }
+        .hero-note { grid-template-columns: 1fr; gap: 8px; }
       }
 
       @media (max-width: 760px) {
@@ -571,17 +671,19 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
         .mobile-menu nav { position: absolute; top: 72px; right: 0; left: 0; padding: 12px 18px 20px; display: grid; border-bottom: 1px solid var(--line); background: var(--oat); box-shadow: 0 20px 40px rgba(38, 37, 31, 0.18); }
         .mobile-menu nav a, .mobile-menu nav button { min-height: 48px; padding: 0; display: flex; align-items: center; border: 0; border-bottom: 1px solid var(--line); background: transparent; font-family: var(--serif); font-size: 21px; text-align: left; }
 
-        .hero { min-height: 0; padding-bottom: 18px; }
-        .hero > picture { position: relative; height: 520px; display: block; }
-        .hero > picture img { object-position: 63% center; }
-        .hero::after { background: linear-gradient(0deg, rgba(29, 34, 27, 0.28), transparent 58%); }
-        .hero-card { position: relative; right: auto; bottom: auto; left: auto; width: auto; margin: -76px 16px 0; padding: 28px 24px; border-radius: 2px 28px 2px 2px; }
-        .hero-card h1 { margin-bottom: 16px; font-size: clamp(47px, 13.8vw, 60px); }
-        .hero-card > p:not(.overline) { margin-bottom: 22px; font-size: 15px; }
-        .hero-actions { align-items: stretch; flex-direction: column; gap: 13px; }
-        .hero-actions button { align-self: flex-start; min-height: 36px; }
-        .hero-card small { margin-top: 18px; line-height: 1.45; }
-        .photo-credit { top: 10px; right: 10px; bottom: auto; }
+        .hero { min-height: 0; height: auto; max-height: none; grid-template-columns: 1fr; }
+        .hero-copy { padding: 48px 20px 44px; }
+        .hero-copy h1 { max-width: 520px; margin-bottom: 20px; font-size: clamp(46px, 13vw, 56px); line-height: 0.94; }
+        .hero-copy > p:not(.overline) { margin-bottom: 26px; font-size: 15px; line-height: 1.6; }
+        .hero-actions { width: 100%; align-items: stretch; flex-direction: column; gap: 12px; }
+        .hero-actions .primary-button { width: 100%; }
+        .hero-actions button { align-self: flex-start; min-height: 38px; }
+        .hero-note { margin-top: 36px; padding-top: 16px; grid-template-columns: 1fr; gap: 7px; }
+        .hero-note span { font-size: 14px; }
+        .hero-visual { height: auto; }
+        .hero-visual picture { aspect-ratio: 4 / 3; }
+        .hero-visual img { object-position: 62% center; }
+        .hero-visual figcaption { min-height: 30px; padding-inline: 12px; font-size: 7px; }
         .service-row { padding: 18px; grid-template-columns: 1fr 1fr; gap: 0; }
         .service-row p { min-height: 54px; padding: 12px 8px; display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 13px; }
         .service-row p:nth-child(2) { border-right: 0; }
@@ -589,21 +691,21 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
 
         .shop-section, .routine-section, .faq-section { padding: 76px 16px; }
         .section-heading { margin-bottom: 34px; grid-template-columns: 1fr; gap: 20px; }
-        .section-heading h2, .collection-copy h2, .why-copy h2, .faq-section h2, .newsletter h2 { font-size: clamp(46px, 13vw, 58px); }
+        .section-heading h2, .collection-copy h2, .why-copy h2, .faq-section h2, .newsletter h2 { font-size: clamp(42px, 12vw, 54px); }
         .filter-bar { margin-inline: -16px; padding: 0 16px 4px; overflow-x: auto; scrollbar-width: none; }
         .filter-bar::-webkit-scrollbar { display: none; }
         .filter-chip { flex: 0 0 auto; }
         #product-count { display: none; }
-        .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 38px 10px; }
-        .product-image { border-radius: 90px 90px 7px 7px; }
-        .product-tag { top: 9px; left: 9px; padding: 5px 7px; font-size: 6px; }
+        .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 42px 12px; }
+        .product-image { border-radius: 14px 14px 4px 4px; }
         .image-action { display: none; }
-        .product-info { min-height: 142px; padding: 14px 0 12px; flex-direction: column; justify-content: flex-start; gap: 8px; }
-        .product-kicker { font-size: 6px; }
-        .product-info h3 { font-size: 22px; }
-        .product-color { font-size: 9px; }
-        .price { font-size: 18px; text-align: left; }
-        .quick-add { min-height: 43px; padding: 0 11px; font-size: 7px; }
+        .product-info { min-height: 150px; padding: 14px 1px 12px; display: flex; flex-direction: column; gap: 0; }
+        .product-kicker { min-height: 26px; margin-bottom: 5px; font-size: 7px; line-height: 1.35; }
+        .product-info h3 { max-width: none; margin-bottom: 7px; font-size: 22px; line-height: 1.03; }
+        .product-color { font-size: 9px; line-height: 1.35; }
+        .price { margin-top: auto; padding-top: 9px; font-size: 18px; text-align: left; }
+        .price small { display: inline; margin-left: 4px; font-size: 6px; }
+        .quick-add { min-height: 44px; padding: 0 12px; font-size: 8px; }
 
         .collection-banner { margin: 0 16px; display: flex; flex-direction: column-reverse; border-radius: 3px 44px 3px 3px; }
         .collection-copy { padding: 42px 24px; }
@@ -629,6 +731,14 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
         .cart-drawer { width: 100%; }
         .cart-head h2 { font-size: 36px; }
         .toast { right: 12px; bottom: 12px; max-width: calc(100% - 24px); }
+      }
+
+      @media (max-width: 350px) {
+        .brand-copy { font-size: 17px; }
+        .bag-button { padding-inline: 9px; }
+        .product-grid { grid-template-columns: 1fr; }
+        .product-info { min-height: 0; }
+        .product-info h3 { font-size: 28px; }
       }
 
       @media (prefers-reduced-motion: reduce) {
