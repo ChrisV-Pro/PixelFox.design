@@ -1165,13 +1165,6 @@
         text-decoration: underline;
         text-underline-offset: 3px;
       }
-      .honeypot {
-        position: absolute;
-        left: -10000px;
-        width: 1px;
-        height: 1px;
-        overflow: hidden;
-      }
       .submit-button {
         margin-top: 5px;
         min-width: 218px;
@@ -1189,39 +1182,8 @@
         color: #dfddcf;
         margin-top: 13px;
       }
-      .form-status[data-state="error"] {
-        color: #ffc19c;
-      }
       .form-status:empty {
         margin: 0;
-      }
-      .brief-result {
-        border: 1px solid var(--line-dark);
-        padding: 19px;
-        margin-top: 23px;
-      }
-      .brief-result > label {
-        font-size: 12px;
-        display: block;
-        margin-bottom: 10px;
-      }
-      .brief-result > textarea {
-        width: 100%;
-        background: #151a12;
-        border: 1px solid #777d6c;
-        color: var(--paper);
-        font-size: 12px;
-        padding: 12px;
-        resize: vertical;
-      }
-      .brief-result > .text-link {
-        margin-top: 10px;
-      }
-      .brief-result[hidden] {
-        display: none !important;
-      }
-      #turnstile-slot:not(:empty) {
-        margin-bottom: 15px;
       }
       .site-footer {
         background: var(--ink);
@@ -2968,8 +2930,8 @@
               <span class="section-num">09</span>Let’s build something that matters
             </p><h2 id="contact-title">
               Your next<br />chapter<br />starts <em>here.</em>
-            </h2><p>Tell us a little about your business and where you want to go. We’ll take it from there.</p><span class="contact-signature">PIXELFOX<span>·</span><small>THOUGHTFUL BY NATURE.</small></span>
-          </div><form action="/api/contact" class="project-form" data-mode="draft" data-turnstile-key="" id="project-form" method="post">
+            </h2><p>Tell us a little about your business and where you want to go. We’ll take it from there.</p><a class="contact-email" href="mailto:support@pixelfox.design">support@pixelfox.design</a><span class="contact-signature">PIXELFOX<span>·</span><small>THOUGHTFUL BY NATURE.</small></span>
+          </div><form action="mailto:support@pixelfox.design?subject=PixelFox.design%20project%20inquiry" class="project-form" data-support-email="support@pixelfox.design" enctype="text/plain" id="project-form" method="post">
             <p class="form-heading">A little about your project.</p><p class="form-subtitle">The beginning of something considered.</p><div class="field-row">
               <div class="field">
                 <label for="name">Your name <span aria-hidden="true">*</span></label><input autocomplete="name" id="name" maxlength="100" minlength="2" name="name" placeholder="First and last name" required="" />
@@ -2984,11 +2946,7 @@
               </div>
             </div><div class="field">
               <label for="message">Tell us about your project <span aria-hidden="true">*</span></label><textarea id="message" maxlength="5000" minlength="10" name="message" placeholder="What are you building? What would you like to change?" required="" rows="3"></textarea>
-            </div><div aria-hidden="true" class="honeypot">
-              <label for="fax">Leave this field empty</label><input autocomplete="off" id="fax" name="fax" tabindex="-1" />
-            </div><label class="consent"><input name="consent" required="" type="checkbox" value="yes" /><span>I agree to my details being used to respond to this inquiry. <a data-preview-target="preview-privacy" href="#preview-privacy">Privacy information</a>.</span></label><div id="turnstile-slot"></div><button class="button button-orange submit-button" type="submit"><span>Prepare project brief</span><svg aria-hidden="true" fill="none" height="20" viewbox="0 0 24 24" width="20"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"></path></svg></button><p class="draft-note">Preview mode: this prepares a brief on your device. Nothing is sent.</p><p aria-live="polite" class="form-status" id="form-status" role="status"></p><div class="brief-result" hidden="" id="brief-result">
-              <label for="brief-text">Your project brief</label><textarea id="brief-text" readonly="" rows="7"></textarea><button class="text-link" id="download-brief" type="button">Save brief as a text file <svg aria-hidden="true" fill="none" height="20" viewbox="0 0 24 24" width="20"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"></path></svg></button>
-            </div><noscript><p class="draft-note">Enable JavaScript to prepare or send a brief. No details are submitted without it.</p></noscript>
+            </div><label class="consent"><input name="consent" required="" type="checkbox" value="yes" /><span>I agree to include these details in an email to PixelFox. <a data-preview-target="preview-privacy" href="#preview-privacy">Privacy information</a>.</span></label><button class="button button-orange submit-button" type="submit"><span>Email project brief</span><svg aria-hidden="true" fill="none" height="20" viewbox="0 0 24 24" width="20"><path d="M4 12h15m-6-6 6 6-6 6" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.3"></path></svg></button><p class="draft-note">Opens a ready-to-send message to support@pixelfox.design in your email app.</p><p aria-live="polite" class="form-status" id="form-status" role="status"></p><noscript><p class="draft-note">Submitting this form opens your email app. You can also email support@pixelfox.design directly.</p></noscript>
           </form>
         </div>
       </section>
@@ -3028,111 +2986,32 @@
         const form = document.querySelector("#project-form");
         if (!(form instanceof HTMLFormElement)) return;
         const status = document.querySelector("#form-status");
-        const submit = form.querySelector('button[type="submit"]');
-        const submitLabel = submit.querySelector("span");
-        const defaultLabel = submitLabel.textContent;
-        const key = form.dataset.turnstileKey;
-        const live = form.dataset.mode === "live";
-        let turnstileLoading = false;
-        let widgetId;
-        let requestId;
-        const tell = (text, error = false) => {
+        const supportEmail = form.dataset.supportEmail || "support@pixelfox.design";
+        const tell = (text) => {
           status.textContent = text;
-          status.dataset.state = error ? "error" : "success";
+          status.dataset.state = "success";
         };
-        const createId = () =>
-          globalThis.crypto?.randomUUID?.() ||
-          "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, (c) => {
-            const r = Math.floor(Math.random() * 16);
-            return (c === "x" ? r : (r & 3) | 8).toString(16);
-          });
-        const ensureTurnstile = () => {
-          if (!live || !key || turnstileLoading) return;
-          turnstileLoading = true;
-          const script = document.createElement("script");
-          script.src = "https://challenges.cloudflare.com/turnstile/v0/api.js?render=explicit";
-          script.async = true;
-          script.onload = () => {
-            widgetId = window.turnstile.render("#turnstile-slot", {
-              sitekey: key,
-              action: "contact",
-              theme: "dark",
-              size: "flexible",
-              "error-callback": () => tell("The security check could not load. Please try again.", true),
-              "expired-callback": () => window.turnstile.reset(widgetId),
-            });
-          };
-          script.onerror = () => {
-            turnstileLoading = false;
-            script.remove();
-            tell("The security check could not load. Check your connection and try again.", true);
-          };
-          document.head.append(script);
-        };
-        form.addEventListener("focusin", ensureTurnstile);
-        form.addEventListener("pointerdown", ensureTurnstile);
-        form.addEventListener("input", () => {
-          requestId = undefined;
-        });
 
-        form.addEventListener("submit", async (event) => {
+        form.addEventListener("submit", (event) => {
           event.preventDefault();
           if (!form.reportValidity()) return;
           const values = Object.fromEntries(new FormData(form).entries());
-          if (!live) {
-            const brief = ["PIXELFOX.DESIGN — PROJECT BRIEF", "", `Name: ${values.name}`, `Email: ${values.email}`, `Company: ${values.company || "Not specified"}`, `Interested in: ${values.service}`, "", "ABOUT THE PROJECT", String(values.message || ""), "", "This brief was prepared locally. It has not been sent."].join("\n");
-            document.querySelector("#brief-text").value = brief;
-            document.querySelector("#brief-result").hidden = false;
-            tell("Your brief is ready below. Nothing has been sent.");
-            return;
-          }
-          if (key && !values["cf-turnstile-response"]) {
-            ensureTurnstile();
-            tell("Please complete the security check, then send your inquiry.", true);
-            return;
-          }
-          requestId ||= createId();
-          values.requestId = requestId;
-          submit.disabled = true;
-          submitLabel.textContent = "Sending…";
-          tell("Sending your inquiry…");
-          const controller = new AbortController();
-          const timeout = setTimeout(() => controller.abort(), 25000);
-          try {
-            const response = await fetch("/api/contact", {
-              method: "POST",
-              headers: {
-                "Content-Type": "application/json",
-                Accept: "application/json",
-              },
-              body: JSON.stringify(values),
-              credentials: "same-origin",
-              signal: controller.signal,
-            });
-            const result = await response.json().catch(() => null);
-            if (!response.ok || !result?.ok) throw new Error(result?.message || "Your inquiry could not be sent. Please try again.");
-            tell(result.message);
-            form.reset();
-            requestId = undefined;
-          } catch (error) {
-            tell(error?.name === "AbortError" ? "The request timed out. Your details are still here. Please try again." : error.message || "Check your connection and try again.", true);
-          } finally {
-            clearTimeout(timeout);
-            submit.disabled = false;
-            submitLabel.textContent = defaultLabel;
-            if (widgetId !== undefined && window.turnstile) window.turnstile.reset(widgetId);
-          }
-        });
-        document.querySelector("#download-brief")?.addEventListener("click", () => {
-          const text = document.querySelector("#brief-text").value;
-          const url = URL.createObjectURL(new Blob([text], { type: "text/plain;charset=utf-8" }));
-          const link = document.createElement("a");
-          link.href = url;
-          link.download = "PixelFox-project-brief.txt";
-          document.body.append(link);
-          link.click();
-          link.remove();
-          setTimeout(() => URL.revokeObjectURL(url), 5000);
+          const company = String(values.company || "").trim();
+          const subject = `PixelFox project inquiry from ${values.name}${company ? ` at ${company}` : ""}`;
+          const brief = [
+            "PIXELFOX.DESIGN - PROJECT INQUIRY",
+            "",
+            `Name: ${values.name}`,
+            `Reply email: ${values.email}`,
+            `Company: ${company || "Not specified"}`,
+            `Interested in: ${values.service}`,
+            "",
+            "ABOUT THE PROJECT",
+            String(values.message || ""),
+          ].join("\n");
+
+          tell(`Opening your email app with a message addressed to ${supportEmail}. Review it there, then choose Send.`);
+          window.location.href = `mailto:${supportEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(brief)}`;
         });
       })();
     </script><dialog aria-label="PixelFox concept detail" class="preview-dialog" id="preview-work-nexora">
@@ -3187,9 +3066,7 @@
         <article class="container prose">
           <p class="eyebrow">Privacy &amp; inquiries</p><h1>
             A considered approach<br />to your information.
-          </h1><p>This page explains how the inquiry feature in this website works. Contact details are used to understand and respond to a project inquiry, not to sign you up for a mailing list.</p><h2>Preview mode</h2><p>When the form says “Preview mode,” your brief is prepared inside your browser. The form does not send it to PixelFox or save it in browser storage. You can choose to save a text copy on your own device.</p><h2>Live inquiries</h2><p>When live sending is enabled, the name, email address, company, selected service, and project description you provide are sent to the studio’s configured inbox using Cloudflare and its email-delivery provider, Resend. Avoid including sensitive personal information in your message.</p><h2>Security checks</h2><p>
-            The live endpoint validates submissions and limits repeated requests. When Cloudflare Turnstile is configured, it performs a security check before an inquiry can be sent. Cloudflare may process technical request information to deliver and protect the website.
-          </p><h2>Analytics and browser storage</h2><p>This version does not include advertising pixels, third-party analytics, marketing cookies, or browser-storage tracking. Infrastructure providers may maintain operational and security logs.</p><h2>Questions or corrections</h2><p>Live email delivery has not been configured in this preview. A studio contact address will be provided when inquiries are enabled.</p><p>This notice describes the features supplied with the site. It should be updated by the site owner if the live services, contact details, retention practices, or integrations change.</p><p><a href="#top">← Return to PixelFox</a></p>
+          </h1><p>This page explains how the inquiry feature works. Contact details are used only to understand and respond to a project inquiry, not to sign you up for a mailing list.</p><h2>Email inquiries</h2><p>The contact form prepares an email on your device and opens your email app with support@pixelfox.design already addressed. The PixelFox website does not receive, transmit, or store the form details. Your information is sent only after you review the message and choose Send in your email app.</p><h2>Email processing</h2><p>Once sent, your email provider and the PixelFox email provider process the message for delivery and reply. Avoid including passwords, payment details, health information, or other sensitive personal information.</p><h2>Analytics and browser storage</h2><p>This version does not include advertising pixels, third-party analytics, marketing cookies, or browser-storage tracking. Infrastructure providers may maintain operational and security logs.</p><h2>Questions or corrections</h2><p>Email <a href="mailto:support@pixelfox.design">support@pixelfox.design</a> with questions about an inquiry or to request a correction or deletion.</p><p>This notice should be updated by the site owner if the contact process, retention practices, or integrations change.</p><p><a href="#top">← Return to PixelFox</a></p>
         </article>
       </main>
     </dialog><script>
