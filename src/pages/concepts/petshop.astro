@@ -7,513 +7,751 @@ const canonicalUrl = "https://pixelfox.design/concepts/petshop/";
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Pogo &amp; Pine | Fictional Pet Products Ecommerce Concept</title>
-    <meta name="description" content="Pogo & Pine is a colorful fictional pet-products ecommerce concept created by PixelFox.design." />
+    <title>Sunday Mudroom | Fictional Pet Products Ecommerce Concept</title>
+    <meta
+      name="description"
+      content="Sunday Mudroom is an earthy, home-focused fictional pet-products ecommerce concept created by PixelFox.design."
+    />
     <meta name="robots" content="index,follow" />
     <link rel="canonical" href={canonicalUrl} />
-    <meta property="og:title" content="Pogo & Pine | Fictional Pet Products Ecommerce Concept" />
-    <meta property="og:description" content="A bright, product-first ecommerce experience for a fictional modern pet-goods brand." />
+    <meta property="og:title" content="Sunday Mudroom | Fictional Pet Products Ecommerce Concept" />
+    <meta
+      property="og:description"
+      content="A warm, product-led online shop concept for pet goods designed to live beautifully at home."
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content={canonicalUrl} />
-    <meta property="og:image" content="https://pixelfox.design/images/petshop/pack-hero-1000.webp" />
+    <meta property="og:image" content="https://pixelfox.design/images/sunday-mudroom/hero-1600.webp" />
     <meta name="twitter:card" content="summary_large_image" />
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2214%22 fill=%22%231240d8%22/><circle cx=%2222%22 cy=%2223%22 r=%226%22 fill=%22%23f4d248%22/><circle cx=%2242%22 cy=%2223%22 r=%226%22 fill=%22%23f4d248%22/><circle cx=%2232%22 cy=%2238%22 r=%2211%22 fill=%22%23f4d248%22/></svg>" />
+    <link
+      rel="icon"
+      href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 64 64%22><rect width=%2264%22 height=%2264%22 rx=%2232%22 fill=%22%23344536%22/><path d=%22M18 44V28c0-9 6-15 14-15s14 6 14 15v16%22 fill=%22none%22 stroke=%22%23f3eddf%22 stroke-width=%224%22/><circle cx=%2232%22 cy=%2233%22 r=%226%22 fill=%22%23b76a4f%22/></svg>"
+    />
   </head>
   <body>
-    <a class="skip-link" href="#main">Skip to content</a>
+    <a class="skip-link" href="#main">Skip to products</a>
 
     <div class="concept-strip">
-      <a href="/">PixelFox.design</a>
-      <span>Independent fictional ecommerce concept. No products are sold.</span>
+      <a href="/">A PixelFox.design concept</a>
+      <span>Fictional shop. Illustrative products and prices. Nothing is sold.</span>
     </div>
 
-    <header class="site-header" id="top">
-      <a class="brand" href="#top" aria-label="Pogo and Pine home">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i><b></b></span>
-        <span>Pogo <em>&amp;</em> Pine</span>
-      </a>
-      <nav class="desktop-nav" aria-label="Main navigation">
-        <a href="#shop">Shop</a>
-        <a href="#story">Our rhythm</a>
-        <a href="#finder">Find your gear</a>
+    <header class="store-header" id="top">
+      <div class="header-main">
+        <a class="brand" href="#top" aria-label="Sunday Mudroom home">
+          <span class="brand-mark" aria-hidden="true"><i></i></span>
+          <span class="brand-copy">Sunday Mudroom <small>Pet goods for real homes</small></span>
+        </a>
+
+        <button class="search-trigger" id="search-trigger" type="button" aria-controls="search-panel" aria-expanded="false">
+          <svg aria-hidden="true" viewBox="0 0 24 24"><circle cx="10.5" cy="10.5" r="6.5"></circle><path d="m15.5 15.5 5 5"></path></svg>
+          Search the shop
+        </button>
+
+        <div class="header-actions">
+          <button class="account-button" type="button" data-demo="account">Account</button>
+          <button class="bag-button" id="bag-button" type="button" aria-haspopup="dialog">
+            Bag <span id="bag-count">0</span>
+          </button>
+          <details class="mobile-menu">
+            <summary aria-label="Open shop menu"><span></span></summary>
+            <nav aria-label="Mobile shop navigation">
+              <a href="#shop">Shop all</a>
+              <button type="button" data-category-link="walk">Walk</button>
+              <button type="button" data-category-link="rest">Rest</button>
+              <button type="button" data-category-link="feed">Feed</button>
+              <button type="button" data-category-link="play">Play</button>
+              <a href="#why">Our approach</a>
+            </nav>
+          </details>
+        </div>
+      </div>
+
+      <div class="search-panel" id="search-panel" hidden>
+        <form id="search-form" role="search">
+          <label for="shop-search">What are you looking for?</label>
+          <div>
+            <input id="shop-search" name="query" type="search" placeholder="Try bed, bowl, walking..." autocomplete="off" />
+            <button type="submit">Search</button>
+          </div>
+          <p id="search-status" role="status">Search this four-product concept collection.</p>
+        </form>
+      </div>
+
+      <nav class="shop-nav" aria-label="Shop categories">
+        <a href="#shop">Shop all</a>
+        <button type="button" data-category-link="walk">Walk</button>
+        <button type="button" data-category-link="rest">Rest</button>
+        <button type="button" data-category-link="feed">Feed</button>
+        <button type="button" data-category-link="play">Play</button>
+        <a href="#why">Why Sunday Mudroom</a>
       </nav>
-      <button class="bag-button" id="bag-button" type="button" aria-haspopup="dialog">Bag <span id="bag-count">0</span></button>
-      <details class="mobile-nav">
-        <summary>Menu <span aria-hidden="true"></span></summary>
-        <nav aria-label="Mobile navigation">
-          <a href="#shop">Shop</a>
-          <a href="#story">Our rhythm</a>
-          <a href="#finder">Find your gear</a>
-        </nav>
-      </details>
     </header>
 
     <main id="main">
       <section class="hero" aria-labelledby="hero-title">
-        <div class="hero-copy">
-          <p class="kicker">Good gear. Great company.</p>
-          <h1 id="hero-title">Make every walk <em>a big deal.</em></h1>
-          <p class="hero-intro">Color-forward essentials imagined for muddy paws, snack breaks, and the very best part of the day.</p>
-          <div class="hero-actions">
-            <a class="button button-dark" href="#shop">Shop the concept <span>&rarr;</span></a>
-            <a class="text-link" href="#finder">Find their fit</a>
-          </div>
-          <p class="concept-note">Fictional brand, products, and illustrative prices.</p>
-        </div>
-        <figure class="hero-visual">
-          <picture>
-            <source media="(max-width: 760px)" srcset="/images/petshop/pack-hero-640.avif" type="image/avif" />
-            <source media="(max-width: 760px)" srcset="/images/petshop/pack-hero-640.webp" type="image/webp" />
-            <source srcset="/images/petshop/pack-hero-1000.avif" type="image/avif" />
-            <img alt="Two cheerful dogs with colorful leash, bowl, and enrichment toy created for the fictional Pogo and Pine concept" decoding="async" fetchpriority="high" height="1253" src="/images/petshop/pack-hero-1000.webp" width="1000" />
-          </picture>
-          <div class="hero-sticker" aria-hidden="true"><span>Walk kit</span><strong>4 pieces</strong><small>Concept collection</small></div>
-          <figcaption>Original AI-generated concept photography</figcaption>
-        </figure>
-      </section>
-
-      <nav class="category-bar" aria-label="Shop categories">
-        <a href="#shop"><span>01</span> Walk</a>
-        <a href="#shop"><span>02</span> Play</a>
-        <a href="#shop"><span>03</span> Eat</a>
-        <a href="#shop"><span>04</span> Carry</a>
-      </nav>
-
-      <section class="shop" id="shop" aria-labelledby="shop-title">
-        <header class="section-head">
-          <p class="eyebrow">The daily lineup</p>
-          <h2 id="shop-title">Pick the good stuff.</h2>
-          <p>A compact fictional collection designed to make the shopping path quick, visual, and easy to compare.</p>
-        </header>
-        <div class="shop-grid">
-          <figure class="flatlay">
-            <picture>
-              <source sizes="(max-width: 760px) 100vw, 52vw" srcset="/images/petshop/gear-flatlay-600.avif 600w, /images/petshop/gear-flatlay-1000.avif 1000w" type="image/avif" />
-              <source sizes="(max-width: 760px) 100vw, 52vw" srcset="/images/petshop/gear-flatlay-600.webp 600w, /images/petshop/gear-flatlay-1000.webp 1000w" type="image/webp" />
-              <img alt="Overhead arrangement of a leash, treat pouch, ceramic bowl, and enrichment toy" decoding="async" height="1000" loading="lazy" src="/images/petshop/gear-flatlay-1000.webp" width="1000" />
-            </picture>
-            <figcaption>Original AI-generated product study</figcaption>
-            <span class="hotspot hotspot-one">01</span>
-            <span class="hotspot hotspot-two">02</span>
-            <span class="hotspot hotspot-three">03</span>
-            <span class="hotspot hotspot-four">04</span>
-          </figure>
-          <div class="product-list">
-            <article class="product-row">
-              <span class="product-number">01</span>
-              <div><p class="product-type">Walk</p><h3>Loop Rope Lead</h3><p>Soft-grip rope with a simple swivel clip.</p></div>
-              <div class="product-buy"><span>$34 <small>Concept price</small></span><button type="button" data-product="Loop Rope Lead">Add <b>+</b></button></div>
-            </article>
-            <article class="product-row">
-              <span class="product-number">02</span>
-              <div><p class="product-type">Carry</p><h3>Pocket Treat Pouch</h3><p>A bright, hands-free home for the good snacks.</p></div>
-              <div class="product-buy"><span>$28 <small>Concept price</small></span><button type="button" data-product="Pocket Treat Pouch">Add <b>+</b></button></div>
-            </article>
-            <article class="product-row">
-              <span class="product-number">03</span>
-              <div><p class="product-type">Eat</p><h3>Slow-Go Bowl</h3><p>A weighty ceramic bowl with a low, friendly profile.</p></div>
-              <div class="product-buy"><span>$42 <small>Concept price</small></span><button type="button" data-product="Slow-Go Bowl">Add <b>+</b></button></div>
-            </article>
-            <article class="product-row">
-              <span class="product-number">04</span>
-              <div><p class="product-type">Play</p><h3>Bounce Ball</h3><p>Textured enrichment made for lively afternoons.</p></div>
-              <div class="product-buy"><span>$18 <small>Concept price</small></span><button type="button" data-product="Bounce Ball">Add <b>+</b></button></div>
-            </article>
-            <p class="add-status" id="add-status" aria-live="polite">Concept shop preview. Nothing can be purchased.</p>
-          </div>
-        </div>
-      </section>
-
-      <div class="ticker" aria-hidden="true"><span>For good dogs and their people / For good dogs and their people / For good dogs and their people /</span></div>
-
-      <section class="story" id="story" aria-labelledby="story-title">
         <picture>
-          <source sizes="100vw" srcset="/images/petshop/walk-story-800.avif 800w, /images/petshop/walk-story-1500.avif 1500w" type="image/avif" />
-          <source sizes="100vw" srcset="/images/petshop/walk-story-800.webp 800w, /images/petshop/walk-story-1500.webp 1500w" type="image/webp" />
-          <img alt="A person enjoying a sunny walk with a happy dog in colorful walking gear" decoding="async" height="1000" loading="lazy" src="/images/petshop/walk-story-1500.webp" width="1500" />
+          <source
+            sizes="100vw"
+            srcset="/images/sunday-mudroom/hero-900.avif 900w, /images/sunday-mudroom/hero-1600.avif 1600w"
+            type="image/avif"
+          />
+          <source
+            sizes="100vw"
+            srcset="/images/sunday-mudroom/hero-900.webp 900w, /images/sunday-mudroom/hero-1600.webp 1600w"
+            type="image/webp"
+          />
+          <img
+            alt="Woman helping a happy dog into an earthy green harness beside coordinated pet products in a warm mudroom"
+            decoding="async"
+            fetchpriority="high"
+            height="1067"
+            src="/images/sunday-mudroom/hero-1600.webp"
+            width="1600"
+          />
         </picture>
-        <div class="story-card">
-          <p class="eyebrow">Out the door</p>
-          <h2 id="story-title">Built around the best part of the day.</h2>
-          <p>This concept positions everyday pet gear like a joyful lifestyle collection: useful first, visually memorable, and always centered on the bond.</p>
-          <a class="button button-light" href="#finder">Meet your match <span>&rarr;</span></a>
+        <div class="hero-card">
+          <p class="overline">The entryway edit</p>
+          <h1 id="hero-title">Good pet things, chosen for home.</h1>
+          <p>Earthy, useful essentials imagined for family routines, muddy paws, and the rooms everyone actually lives in.</p>
+          <div class="hero-actions">
+            <a class="primary-button" href="#shop">Shop the collection</a>
+            <button type="button" data-category-link="walk">Shop walking</button>
+          </div>
+          <small>Independent fictional ecommerce concept. No purchases are possible.</small>
         </div>
-        <p class="photo-note">AI-generated lifestyle concept</p>
+        <p class="photo-credit">Original AI-generated concept photography</p>
       </section>
 
-      <section class="principles" aria-labelledby="principles-title">
-        <div class="principles-title">
-          <p class="eyebrow">Concept product principles</p>
-          <h2 id="principles-title">Easy to grab.<br />Hard to leave home.</h2>
+      <section class="service-row" aria-label="Concept store benefits">
+        <p><span>01</span> Thoughtful materials</p>
+        <p><span>02</span> Calm, simple choices</p>
+        <p><span>03</span> Made for daily routines</p>
+        <p><span>04</span> Concept checkout only</p>
+      </section>
+
+      <section class="shop-section" id="shop" aria-labelledby="shop-title">
+        <div class="section-heading">
+          <div>
+            <p class="overline">Shop the concept</p>
+            <h2 id="shop-title">The everyday collection</h2>
+          </div>
+          <p>Four coordinated essentials, styled like the rest of the home. Prices and product details are illustrative.</p>
         </div>
-        <div class="principle-grid">
-          <article><span>01</span><h3>Daily-use shapes</h3><p>A tight assortment keeps decisions simple and puts useful products first.</p></article>
-          <article><span>02</span><h3>Color with purpose</h3><p>Bold color helps categories feel distinct while giving the shop a recognizable voice.</p></article>
-          <article><span>03</span><h3>Details up close</h3><p>Product texture, hardware, and scale stay visible so shoppers can compare confidently.</p></article>
+
+        <div class="filter-bar" aria-label="Filter products">
+          <button class="filter-chip is-active" type="button" data-filter="all" aria-pressed="true">All goods</button>
+          <button class="filter-chip" type="button" data-filter="walk" aria-pressed="false">Walk</button>
+          <button class="filter-chip" type="button" data-filter="rest" aria-pressed="false">Rest</button>
+          <button class="filter-chip" type="button" data-filter="feed" aria-pressed="false">Feed</button>
+          <button class="filter-chip" type="button" data-filter="play" aria-pressed="false">Play</button>
+          <span id="product-count" aria-live="polite">4 concept products</span>
+        </div>
+
+        <div class="product-grid">
+          <article class="product-card" data-product-card data-category="rest" data-search="hearth bed rest washable moss">
+            <div class="product-image">
+              <picture>
+                <source srcset="/images/sunday-mudroom/hearth-bed-520.avif 520w, /images/sunday-mudroom/hearth-bed-900.avif 900w" type="image/avif" />
+                <source srcset="/images/sunday-mudroom/hearth-bed-520.webp 520w, /images/sunday-mudroom/hearth-bed-900.webp 900w" type="image/webp" />
+                <img alt="Moss green quilted rectangular pet bed" decoding="async" height="900" loading="lazy" src="/images/sunday-mudroom/hearth-bed-520.webp" width="900" />
+              </picture>
+              <span class="product-tag">Rest</span>
+              <button class="image-action" type="button" data-preview="The Hearth Bed">View details</button>
+            </div>
+            <div class="product-info">
+              <div>
+                <p class="product-kicker">Washed cotton concept</p>
+                <h3>The Hearth Bed</h3>
+                <p class="product-color">Moss / Oat piping</p>
+              </div>
+              <p class="price">$128 <small>Concept price</small></p>
+            </div>
+            <button class="quick-add" type="button" data-add="The Hearth Bed" data-price="$128">Quick add <span>+</span></button>
+          </article>
+
+          <article class="product-card" data-product-card data-category="feed" data-search="stoneware bowl bowls feed ceramic walnut">
+            <div class="product-image">
+              <picture>
+                <source srcset="/images/sunday-mudroom/stoneware-bowls-520.avif 520w, /images/sunday-mudroom/stoneware-bowls-900.avif 900w" type="image/avif" />
+                <source srcset="/images/sunday-mudroom/stoneware-bowls-520.webp 520w, /images/sunday-mudroom/stoneware-bowls-900.webp 900w" type="image/webp" />
+                <img alt="Two speckled cream stoneware pet bowls on a walnut tray" decoding="async" height="900" loading="lazy" src="/images/sunday-mudroom/stoneware-bowls-520.webp" width="900" />
+              </picture>
+              <span class="product-tag">Feed</span>
+              <button class="image-action" type="button" data-preview="The Stoneware Pair">View details</button>
+            </div>
+            <div class="product-info">
+              <div>
+                <p class="product-kicker">Speckled ceramic concept</p>
+                <h3>The Stoneware Pair</h3>
+                <p class="product-color">Cream / Walnut tray</p>
+              </div>
+              <p class="price">$64 <small>Concept price</small></p>
+            </div>
+            <button class="quick-add" type="button" data-add="The Stoneware Pair" data-price="$64">Quick add <span>+</span></button>
+          </article>
+
+          <article class="product-card" data-product-card data-category="walk" data-search="market walk set harness lead leash pouch moss cognac">
+            <div class="product-image">
+              <picture>
+                <source srcset="/images/sunday-mudroom/market-walk-set-520.avif 520w, /images/sunday-mudroom/market-walk-set-900.avif 900w" type="image/avif" />
+                <source srcset="/images/sunday-mudroom/market-walk-set-520.webp 520w, /images/sunday-mudroom/market-walk-set-900.webp 900w" type="image/webp" />
+                <img alt="Moss canvas harness, cotton rope lead, and oat treat pouch" decoding="async" height="900" loading="lazy" src="/images/sunday-mudroom/market-walk-set-520.webp" width="900" />
+              </picture>
+              <span class="product-tag product-tag--clay">Walk</span>
+              <button class="image-action" type="button" data-preview="The Market Walk Set">View details</button>
+            </div>
+            <div class="product-info">
+              <div>
+                <p class="product-kicker">Three-piece concept set</p>
+                <h3>The Market Walk Set</h3>
+                <p class="product-color">Moss / Cognac / Oat</p>
+              </div>
+              <p class="price">$92 <small>Concept price</small></p>
+            </div>
+            <button class="quick-add" type="button" data-add="The Market Walk Set" data-price="$92">Quick add <span>+</span></button>
+          </article>
+
+          <article class="product-card" data-product-card data-category="play" data-search="woven play set toys rope clay oat mustard">
+            <div class="product-image">
+              <picture>
+                <source srcset="/images/sunday-mudroom/woven-play-set-520.avif 520w, /images/sunday-mudroom/woven-play-set-900.avif 900w" type="image/avif" />
+                <source srcset="/images/sunday-mudroom/woven-play-set-520.webp 520w, /images/sunday-mudroom/woven-play-set-900.webp 900w" type="image/webp" />
+                <img alt="Three woven rope pet toys in clay, oatmeal, and muted mustard" decoding="async" height="900" loading="lazy" src="/images/sunday-mudroom/woven-play-set-520.webp" width="900" />
+              </picture>
+              <span class="product-tag product-tag--mustard">Play</span>
+              <button class="image-action" type="button" data-preview="The Woven Play Set">View details</button>
+            </div>
+            <div class="product-info">
+              <div>
+                <p class="product-kicker">Three-piece concept set</p>
+                <h3>The Woven Play Set</h3>
+                <p class="product-color">Clay / Oat / Mustard</p>
+              </div>
+              <p class="price">$38 <small>Concept price</small></p>
+            </div>
+            <button class="quick-add" type="button" data-add="The Woven Play Set" data-price="$38">Quick add <span>+</span></button>
+          </article>
         </div>
       </section>
 
-      <section class="finder" id="finder" aria-labelledby="finder-title">
-        <div class="finder-copy">
-          <p class="eyebrow">One-question gear finder</p>
-          <h2 id="finder-title">What kind of outing is on the calendar?</h2>
+      <section class="collection-banner" aria-labelledby="collection-title">
+        <div class="collection-copy">
+          <p class="overline">The mudroom set</p>
+          <h2 id="collection-title">One calm corner. Every daily essential.</h2>
+          <p>Bundle the imagined walking set, bowl pair, and woven toy trio into a coordinated entryway collection.</p>
+          <button class="light-button" type="button" data-add="The Mudroom Bundle" data-price="$176">Add concept bundle</button>
+          <small>Illustrative bundle and price. No transaction will occur.</small>
         </div>
-        <div class="finder-options" role="group" aria-label="Choose an outing">
-          <button type="button" data-answer="The Loop Rope Lead and Pocket Treat Pouch make a lively neighborhood pairing."><span>A</span> The quick block loop</button>
-          <button type="button" data-answer="The full Walk Kit concept keeps the park-day essentials together."><span>B</span> The long park wander</button>
-          <button type="button" data-answer="The Slow-Go Bowl and Bounce Ball concept are ready for a relaxed home day."><span>C</span> The backyard hang</button>
-          <p id="finder-result" aria-live="polite">Choose one to preview a fictional recommendation.</p>
+        <picture>
+          <source srcset="/images/sunday-mudroom/market-walk-set-520.avif 520w, /images/sunday-mudroom/market-walk-set-900.avif 900w" type="image/avif" />
+          <source srcset="/images/sunday-mudroom/market-walk-set-520.webp 520w, /images/sunday-mudroom/market-walk-set-900.webp 900w" type="image/webp" />
+          <img alt="Earth-tone harness, lead, and treat pouch arranged for the fictional collection" decoding="async" height="900" loading="lazy" src="/images/sunday-mudroom/market-walk-set-900.webp" width="900" />
+        </picture>
+      </section>
+
+      <section class="routine-section" aria-labelledby="routine-title">
+        <div class="section-heading section-heading--center">
+          <div>
+            <p class="overline">Browse by routine</p>
+            <h2 id="routine-title">Shop the way home happens</h2>
+          </div>
+          <p>Start with the moment you are solving for, then see the products that belong there.</p>
+        </div>
+        <div class="routine-grid">
+          <button type="button" data-category-link="walk">
+            <span>01 / Entryway</span>
+            <strong>Out the door</strong>
+            <em>Shop walking</em>
+          </button>
+          <button type="button" data-category-link="feed">
+            <span>02 / Kitchen</span>
+            <strong>Supper sorted</strong>
+            <em>Shop feeding</em>
+          </button>
+          <button type="button" data-category-link="rest">
+            <span>03 / Family room</span>
+            <strong>Settle in</strong>
+            <em>Shop resting</em>
+          </button>
         </div>
       </section>
 
-      <section class="signup" aria-labelledby="signup-title">
-        <div><p class="eyebrow">Letters from the pack</p><h2 id="signup-title">Good mail.<br />No junk.</h2></div>
-        <form id="signup-form">
-          <label for="signup-email">Email address</label>
-          <div><input id="signup-email" name="email" type="email" placeholder="you@example.com" required /><button type="submit">Join the concept list <span>&rarr;</span></button></div>
-          <p id="signup-status" aria-live="polite">Demonstration only. No information is sent or saved.</p>
+      <section class="why-section" id="why" aria-labelledby="why-title">
+        <div class="why-photo">
+          <picture>
+            <source srcset="/images/sunday-mudroom/hero-900.avif" type="image/avif" />
+            <img alt="A relaxed pet and owner in a warm family mudroom" decoding="async" height="1067" loading="lazy" src="/images/sunday-mudroom/hero-900.webp" width="1600" />
+          </picture>
+          <p>Original AI-generated concept photography</p>
+        </div>
+        <div class="why-copy">
+          <p class="overline">Why Sunday Mudroom</p>
+          <h2 id="why-title">Pet essentials can belong in the room.</h2>
+          <p class="why-intro">This fictional shop treats pet gear like homeware: useful enough for every day and considered enough to leave out.</p>
+          <dl>
+            <div><dt>Easy to understand</dt><dd>Clear materials, colors, and use cases at a glance.</dd></div>
+            <div><dt>Easy to coordinate</dt><dd>A small palette that works together across categories.</dd></div>
+            <div><dt>Easy to shop</dt><dd>Simple filters and quick-add controls for busy routines.</dd></div>
+          </dl>
+        </div>
+      </section>
+
+      <section class="faq-section" aria-labelledby="faq-title">
+        <div>
+          <p class="overline">Before you add</p>
+          <h2 id="faq-title">A few useful details</h2>
+        </div>
+        <div class="faq-list">
+          <details><summary>Are these products available to buy?</summary><p>No. Sunday Mudroom is an independent fictional ecommerce concept. The bag and checkout language are demonstrations only.</p></details>
+          <details><summary>Are the materials and prices real?</summary><p>No. Product names, materials, colors, bundles, and prices are illustrative parts of the design concept.</p></details>
+          <details><summary>Where did the photography come from?</summary><p>The imagery was created specifically for this fictional concept with AI and is labeled throughout the page.</p></details>
+        </div>
+      </section>
+
+      <section class="newsletter" aria-labelledby="newsletter-title">
+        <div>
+          <p class="overline">Notes from the mudroom</p>
+          <h2 id="newsletter-title">Good finds for pets and the homes they share.</h2>
+        </div>
+        <form id="newsletter-form">
+          <label for="newsletter-email">Email address</label>
+          <div><input id="newsletter-email" type="email" placeholder="you@example.com" required /><button type="submit">Join the concept list</button></div>
+          <p id="newsletter-status" role="status">Demo only. Nothing is sent or saved.</p>
         </form>
       </section>
     </main>
 
     <footer>
-      <div class="footer-brand"><span class="brand-mark" aria-hidden="true"><i></i><i></i><b></b></span><strong>Pogo <em>&amp;</em> Pine</strong></div>
-      <nav aria-label="Footer navigation"><a href="#shop">Shop</a><a href="#story">Our rhythm</a><a href="#finder">Find your gear</a><a href="#top">Back to top</a></nav>
-      <div class="footer-bottom">
-        <p>Pogo & Pine is an independent fictional ecommerce concept by PixelFox.design. Products, prices, availability, claims, and photography are presented only as design examples. No purchases are possible.</p>
-        <a href="/">Return to PixelFox.design &rarr;</a>
+      <div class="footer-brand">
+        <span class="brand-mark" aria-hidden="true"><i></i></span>
+        <div><strong>Sunday Mudroom</strong><small>Pet goods for real homes</small></div>
       </div>
+      <nav aria-label="Footer navigation"><a href="#shop">Shop all</a><a href="#why">Our approach</a><a href="#top">Back to top</a><a href="/">PixelFox.design</a></nav>
+      <p>Sunday Mudroom is a fictional ecommerce concept by PixelFox.design. Products, prices, materials, policies, and photography are presented only as design examples. No purchase is possible.</p>
     </footer>
 
-    <dialog class="bag-dialog" id="bag-dialog" aria-labelledby="bag-title">
-      <div class="bag-head"><h2 id="bag-title">Concept bag</h2><button type="button" id="bag-close" aria-label="Close bag">&times;</button></div>
-      <ul id="bag-items"><li>Your preview bag is empty.</li></ul>
-      <p>This is a design demonstration. No order, checkout, or payment is available.</p>
-      <button class="bag-done" id="bag-done" type="button">Keep browsing</button>
+    <dialog class="cart-drawer" id="cart-dialog" aria-labelledby="cart-title">
+      <div class="cart-head"><div><p class="overline">Concept bag</p><h2 id="cart-title">Your Sunday goods</h2></div><button id="cart-close" type="button" aria-label="Close bag">Close</button></div>
+      <div class="cart-items" id="cart-items"><p class="empty-cart">Your concept bag is empty.</p></div>
+      <div class="cart-foot"><p><span>Concept subtotal</span><strong id="cart-subtotal">$0</strong></p><button type="button" id="checkout-button">Preview checkout</button><small>Nothing can be purchased. No payment details are collected.</small></div>
     </dialog>
 
-    <script is:inline>
-      const bag = [];
-      const bagDialog = document.getElementById("bag-dialog");
-      const bagCount = document.getElementById("bag-count");
-      const bagItems = document.getElementById("bag-items");
-      const addStatus = document.getElementById("add-status");
+    <dialog class="product-dialog" id="product-dialog" aria-labelledby="product-dialog-title">
+      <button id="product-dialog-close" type="button" aria-label="Close product preview">Close</button>
+      <p class="overline">Concept product preview</p>
+      <h2 id="product-dialog-title">Product details</h2>
+      <p>This quick-view treatment demonstrates a familiar ecommerce interaction. Product information is illustrative and no item is for sale.</p>
+      <button class="primary-button" id="preview-add" type="button">Add to concept bag</button>
+    </dialog>
 
-      const renderBag = () => {
-        bagCount.textContent = String(bag.length);
-        bagItems.innerHTML = bag.length ? bag.map((item) => `<li>${item}<span>Concept item</span></li>`).join("") : "<li>Your preview bag is empty.</li>";
-      };
+    <p class="toast" id="toast" role="status" aria-live="polite"></p>
 
-      document.querySelectorAll("[data-product]").forEach((button) => {
-        button.addEventListener("click", () => {
-          const product = button.dataset.product;
-          bag.push(product);
-          renderBag();
-          addStatus.textContent = `${product} was added to the concept bag. Nothing was purchased.`;
-        });
-      });
-
-      document.getElementById("bag-button")?.addEventListener("click", () => bagDialog?.showModal());
-      document.getElementById("bag-close")?.addEventListener("click", () => bagDialog?.close());
-      document.getElementById("bag-done")?.addEventListener("click", () => bagDialog?.close());
-
-      document.querySelectorAll("[data-answer]").forEach((button) => {
-        button.addEventListener("click", () => {
-          document.querySelectorAll("[data-answer]").forEach((option) => option.classList.remove("is-selected"));
-          button.classList.add("is-selected");
-          document.getElementById("finder-result").textContent = button.dataset.answer;
-        });
-      });
-
-      document.getElementById("signup-form")?.addEventListener("submit", (event) => {
-        event.preventDefault();
-        document.getElementById("signup-status").textContent = "Preview complete. No information was sent or saved.";
-      });
-    </script>
-
-    <style is:global>
+    <style>
       :root {
-        --cream: #f6efdf;
-        --ink: #171716;
-        --blue: #1240d8;
-        --blue-dark: #0b2da5;
-        --red: #ed4b2f;
-        --yellow: #f2d34f;
-        --paper: #fffaf0;
-        --line: rgba(23, 23, 22, 0.24);
-        --display: "Bookman Old Style", "URW Bookman", Georgia, serif;
-        --sans: "Trebuchet MS", "Gill Sans", sans-serif;
+        --ink: #26251f;
+        --moss: #354337;
+        --deep-moss: #263229;
+        --sage: #9da58d;
+        --oat: #efe7d8;
+        --paper: #faf7f0;
+        --clay: #a85f43;
+        --mustard: #c69b52;
+        --walnut: #76543c;
+        --line: rgba(38, 37, 31, 0.2);
+        --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+        --sans: "Avenir Next", "Century Gothic", "Trebuchet MS", sans-serif;
       }
 
       * { box-sizing: border-box; }
-      html { scroll-behavior: smooth; scroll-padding-top: 80px; background: var(--ink); }
-      body { margin: 0; overflow-x: hidden; color: var(--ink); background: var(--cream); font-family: var(--sans); font-size: 17px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
+      html { scroll-behavior: smooth; scroll-padding-top: 150px; background: var(--deep-moss); }
+      body { margin: 0; overflow-x: hidden; color: var(--ink); background: var(--paper); font-family: var(--sans); font-size: 16px; line-height: 1.55; -webkit-font-smoothing: antialiased; }
       body:has(dialog[open]) { overflow: hidden; }
       a { color: inherit; text-decoration: none; }
-      button, input { font: inherit; }
-      button { color: inherit; }
-      img { display: block; max-width: 100%; }
+      button, input { color: inherit; font: inherit; }
+      button { cursor: pointer; }
+      img { width: 100%; display: block; }
       h1, h2, h3, p { margin-top: 0; }
-      h1, h2, h3 { font-family: var(--display); }
-      :focus-visible { outline: 3px solid var(--yellow); outline-offset: 4px; }
-      .skip-link { position: fixed; z-index: 400; top: 12px; left: 12px; padding: 11px 15px; background: var(--yellow); transform: translateY(-170%); }
+      h1, h2, h3 { font-family: var(--serif); font-weight: 400; letter-spacing: -0.045em; }
+      :focus-visible { outline: 3px solid var(--clay); outline-offset: 4px; }
+      [hidden] { display: none !important; }
+      .skip-link { position: fixed; z-index: 500; top: 12px; left: 12px; padding: 10px 14px; color: var(--paper); background: var(--deep-moss); transform: translateY(-160%); }
       .skip-link:focus { transform: translateY(0); }
+      .overline { margin-bottom: 14px; color: var(--clay); font-size: 10px; font-weight: 700; letter-spacing: 0.18em; text-transform: uppercase; }
 
-      .concept-strip { min-height: 32px; padding: 6px clamp(18px, 3.4vw, 54px); display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--cream); background: var(--ink); font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
-      .concept-strip a { color: var(--yellow); text-decoration: underline; text-underline-offset: 3px; }
-      .site-header { position: relative; z-index: 40; min-height: 78px; padding: 0 clamp(18px, 3.4vw, 54px); display: grid; grid-template-columns: 1fr auto 1fr; align-items: center; gap: 34px; background: var(--cream); border-bottom: 2px solid var(--ink); }
-      .brand { display: inline-flex; align-items: center; gap: 12px; justify-self: start; font-family: var(--display); font-size: 25px; font-weight: 700; letter-spacing: -0.045em; }
-      .brand em, .footer-brand em { color: var(--red); font-style: normal; }
-      .brand-mark { position: relative; width: 42px; height: 42px; display: inline-block; flex: 0 0 auto; border-radius: 50%; background: var(--blue); transform: rotate(-8deg); }
-      .brand-mark i, .brand-mark b { position: absolute; display: block; border-radius: 50%; background: var(--yellow); }
-      .brand-mark i { top: 9px; width: 9px; height: 11px; }
-      .brand-mark i:first-child { left: 8px; transform: rotate(-24deg); }
-      .brand-mark i:nth-child(2) { right: 8px; transform: rotate(24deg); }
-      .brand-mark b { left: 13px; bottom: 8px; width: 16px; height: 17px; }
-      .desktop-nav { display: flex; align-items: center; gap: clamp(24px, 3vw, 48px); }
-      .desktop-nav a { padding: 8px 0; border-bottom: 2px solid transparent; font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; }
-      .desktop-nav a:hover, .desktop-nav a:focus-visible { border-bottom-color: var(--red); }
-      .bag-button { min-height: 44px; padding: 0 17px; display: inline-flex; align-items: center; gap: 11px; justify-self: end; border: 2px solid var(--ink); background: transparent; cursor: pointer; font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; }
-      .bag-button span { width: 25px; height: 25px; display: grid; place-items: center; border-radius: 50%; color: var(--cream); background: var(--red); }
-      .mobile-nav { display: none; }
+      .concept-strip { min-height: 30px; padding: 6px clamp(18px, 4vw, 64px); display: flex; align-items: center; justify-content: space-between; gap: 20px; color: var(--oat); background: var(--deep-moss); font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+      .concept-strip a { text-decoration: underline; text-underline-offset: 3px; }
+      .store-header { position: sticky; z-index: 80; top: 0; color: var(--ink); background: rgba(250, 247, 240, 0.97); border-bottom: 1px solid var(--line); backdrop-filter: blur(12px); }
+      .header-main { min-height: 84px; padding: 0 clamp(18px, 4vw, 64px); display: grid; grid-template-columns: minmax(260px, 1fr) minmax(280px, 0.75fr) minmax(220px, 1fr); align-items: center; gap: 30px; }
+      .brand { display: inline-flex; align-items: center; gap: 13px; justify-self: start; }
+      .brand-mark { position: relative; width: 44px; height: 48px; display: inline-block; flex: 0 0 auto; border: 2px solid var(--moss); border-radius: 24px 24px 8px 8px; }
+      .brand-mark::before, .brand-mark::after, .brand-mark i { position: absolute; display: block; border-radius: 50%; background: var(--clay); content: ""; }
+      .brand-mark::before { top: 13px; left: 9px; width: 8px; height: 9px; }
+      .brand-mark::after { top: 13px; right: 9px; width: 8px; height: 9px; }
+      .brand-mark i { bottom: 8px; left: 14px; width: 13px; height: 14px; }
+      .brand-copy { display: flex; flex-direction: column; font-family: var(--serif); font-size: clamp(21px, 2vw, 27px); line-height: 1; letter-spacing: -0.035em; }
+      .brand-copy small, .footer-brand small { margin-top: 5px; font-family: var(--sans); font-size: 8px; font-weight: 700; letter-spacing: 0.13em; text-transform: uppercase; }
+      .search-trigger { min-height: 42px; padding: 0 4px; display: flex; align-items: center; gap: 10px; justify-self: stretch; border: 0; border-bottom: 1px solid var(--ink); background: transparent; font-size: 12px; text-align: left; }
+      .search-trigger svg { width: 18px; fill: none; stroke: currentColor; stroke-width: 1.5; }
+      .header-actions { display: flex; align-items: center; justify-content: flex-end; gap: 20px; }
+      .account-button, .bag-button { min-height: 42px; padding: 0; border: 0; background: transparent; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+      .bag-button { padding: 0 16px; border: 1px solid var(--ink); border-radius: 999px; }
+      .bag-button span { margin-left: 7px; color: var(--clay); }
+      .shop-nav { min-height: 48px; padding: 0 clamp(18px, 4vw, 64px); display: flex; align-items: center; justify-content: center; gap: clamp(22px, 3.5vw, 54px); border-top: 1px solid var(--line); }
+      .shop-nav a, .shop-nav button { padding: 0; border: 0; background: transparent; font-size: 10px; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; }
+      .shop-nav a:hover, .shop-nav button:hover { color: var(--clay); }
+      .mobile-menu { display: none; }
+      .search-panel { padding: 28px clamp(18px, 4vw, 64px); border-top: 1px solid var(--line); background: var(--oat); }
+      .search-panel form { max-width: 760px; margin: 0 auto; }
+      .search-panel label { font-family: var(--serif); font-size: 30px; }
+      .search-panel form > div { margin-top: 16px; display: grid; grid-template-columns: 1fr auto; }
+      .search-panel input { min-width: 0; min-height: 50px; padding: 0 16px; border: 1px solid var(--ink); border-right: 0; background: var(--paper); }
+      .search-panel button { padding: 0 24px; border: 1px solid var(--moss); color: var(--paper); background: var(--moss); }
+      .search-panel p { margin: 10px 0 0; font-size: 11px; }
 
-      .hero { min-height: calc(100svh - 110px); display: grid; grid-template-columns: minmax(0, 1.03fr) minmax(460px, 0.97fr); border-bottom: 2px solid var(--ink); }
-      .hero > * { min-width: 0; min-height: 0; }
-      .hero-copy { min-height: 0; padding: clamp(50px, 6vh, 78px) clamp(30px, 6vw, 100px); display: flex; flex-direction: column; justify-content: center; color: var(--paper); background: var(--blue); }
-      .kicker, .eyebrow { margin-bottom: 26px; font-size: 11px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; }
-      .kicker::before, .eyebrow::before { width: 34px; height: 2px; margin-right: 11px; display: inline-block; vertical-align: middle; background: currentColor; content: ""; }
-      h1 { max-width: 850px; margin-bottom: 28px; font-size: clamp(68px, 7.8vw, 126px); font-weight: 700; letter-spacing: -0.075em; line-height: 0.87; }
-      h1 em { display: block; color: var(--yellow); font-style: italic; font-weight: 400; }
-      .hero-intro { max-width: 660px; margin-bottom: 34px; font-size: clamp(18px, 1.5vw, 22px); }
-      .hero-actions { display: flex; align-items: center; gap: 28px; }
-      .button { min-height: 54px; padding: 0 20px; display: inline-flex; align-items: center; justify-content: space-between; gap: 42px; border: 2px solid var(--ink); font-size: 12px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; transition: transform 160ms ease, background 160ms ease, color 160ms ease; }
-      .button:hover, .button:focus-visible { transform: translate(-3px, -3px); box-shadow: 4px 4px 0 var(--red); }
-      .button-dark { color: var(--cream); background: var(--ink); }
-      .button-light { color: var(--ink); background: var(--cream); }
-      .text-link { padding-bottom: 4px; border-bottom: 2px solid var(--yellow); font-size: 12px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-      .concept-note { margin: 34px 0 0; font-size: 10px; letter-spacing: 0.1em; text-transform: uppercase; opacity: 0.78; }
-      .hero-visual { position: relative; min-height: 0; margin: 0; overflow: hidden; background: var(--yellow); }
-      .hero-visual picture { position: absolute; inset: 0; display: block; }
-      .hero-visual picture, .hero-visual img { width: 100%; height: 100%; }
-      .hero-visual img { object-fit: cover; object-position: center 48%; }
-      .hero-sticker { position: absolute; top: 36px; left: 32px; width: 138px; height: 138px; padding: 22px; display: flex; flex-direction: column; align-items: center; justify-content: center; border: 2px solid var(--ink); border-radius: 50%; background: var(--yellow); text-align: center; transform: rotate(-7deg); }
-      .hero-sticker span, .hero-sticker small { font-size: 10px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; }
-      .hero-sticker strong { margin: 2px 0; font-family: var(--display); font-size: 22px; line-height: 1; }
-      .hero-visual figcaption, .flatlay figcaption, .photo-note { position: absolute; right: 14px; bottom: 12px; margin: 0; padding: 6px 8px; color: var(--cream); background: var(--ink); font-size: 9px; letter-spacing: 0.08em; text-transform: uppercase; }
+      .hero { position: relative; min-height: calc(100svh - 162px); overflow: hidden; background: var(--oat); }
+      .hero > picture { position: absolute; inset: 0; }
+      .hero > picture img { height: 100%; object-fit: cover; object-position: center 52%; }
+      .hero::after { position: absolute; inset: 0; background: linear-gradient(90deg, rgba(33, 37, 29, 0.16), transparent 45%); content: ""; pointer-events: none; }
+      .hero-card { position: absolute; z-index: 2; left: clamp(22px, 6vw, 92px); bottom: clamp(22px, 6vw, 76px); width: min(530px, calc(100% - 44px)); padding: clamp(30px, 4vw, 56px); border-radius: 2px 38px 2px 2px; background: rgba(250, 247, 240, 0.95); box-shadow: 0 28px 80px rgba(38, 37, 31, 0.18); }
+      .hero-card h1 { margin-bottom: 20px; font-size: clamp(54px, 5.8vw, 88px); line-height: 0.91; }
+      .hero-card > p:not(.overline) { max-width: 440px; margin-bottom: 28px; font-size: 17px; }
+      .hero-actions { display: flex; align-items: center; gap: 22px; }
+      .primary-button, .hero-actions button, .light-button { min-height: 50px; padding: 0 21px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid var(--moss); font-size: 10px; font-weight: 700; letter-spacing: 0.11em; text-transform: uppercase; }
+      .primary-button { color: var(--paper); background: var(--moss); }
+      .hero-actions button { padding: 0; border: 0; border-bottom: 1px solid var(--ink); background: transparent; }
+      .hero-card small { margin-top: 24px; display: block; font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; }
+      .photo-credit { position: absolute; z-index: 3; right: 14px; bottom: 12px; margin: 0; padding: 6px 9px; color: var(--paper); background: rgba(38, 50, 41, 0.86); font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; }
+      .service-row { min-height: 72px; padding: 14px clamp(18px, 4vw, 64px); display: grid; grid-template-columns: repeat(4, 1fr); align-items: center; background: var(--oat); border-bottom: 1px solid var(--line); }
+      .service-row p { margin: 0; padding: 0 22px; border-right: 1px solid var(--line); font-family: var(--serif); font-size: 16px; text-align: center; }
+      .service-row p:last-child { border-right: 0; }
+      .service-row span { margin-right: 7px; color: var(--clay); font-family: var(--sans); font-size: 9px; }
 
-      .category-bar { display: grid; grid-template-columns: repeat(4, 1fr); border-bottom: 2px solid var(--ink); background: var(--yellow); }
-      .category-bar a { min-height: 92px; padding: 20px clamp(18px, 3vw, 45px); display: flex; align-items: center; justify-content: space-between; border-right: 2px solid var(--ink); font-family: var(--display); font-size: clamp(22px, 2vw, 31px); font-weight: 700; letter-spacing: -0.04em; }
-      .category-bar a:last-child { border-right: 0; }
-      .category-bar a:hover, .category-bar a:focus-visible { color: var(--cream); background: var(--red); }
-      .category-bar span { font-family: var(--sans); font-size: 10px; letter-spacing: 0.1em; }
+      .shop-section, .routine-section, .faq-section { padding: clamp(78px, 9vw, 138px) clamp(18px, 4vw, 64px); }
+      .section-heading { margin-bottom: 52px; display: grid; grid-template-columns: minmax(0, 1.35fr) minmax(260px, 0.65fr); align-items: end; gap: clamp(30px, 8vw, 130px); }
+      .section-heading h2, .collection-copy h2, .why-copy h2, .faq-section h2, .newsletter h2 { margin-bottom: 0; font-size: clamp(50px, 6.2vw, 92px); line-height: 0.94; }
+      .section-heading > p { margin-bottom: 4px; font-size: 15px; }
+      .filter-bar { margin-bottom: 26px; display: flex; align-items: center; gap: 9px; }
+      .filter-chip { min-height: 40px; padding: 0 17px; border: 1px solid var(--line); border-radius: 999px; background: transparent; font-size: 10px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+      .filter-chip.is-active { color: var(--paper); background: var(--moss); border-color: var(--moss); }
+      #product-count { margin-left: auto; color: rgba(38, 37, 31, 0.68); font-size: 10px; letter-spacing: 0.09em; text-transform: uppercase; }
+      .product-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: clamp(12px, 2vw, 28px); }
+      .product-card[hidden] { display: none; }
+      .product-card { min-width: 0; }
+      .product-image { position: relative; aspect-ratio: 1; overflow: hidden; border-radius: 160px 160px 12px 12px; background: var(--oat); }
+      .product-image picture, .product-image img { width: 100%; height: 100%; display: block; }
+      .product-image img { object-fit: cover; transition: transform 450ms ease; }
+      .product-card:hover .product-image img { transform: scale(1.035); }
+      .product-tag { position: absolute; top: 16px; left: 16px; padding: 7px 11px; border-radius: 999px; color: var(--paper); background: var(--moss); font-size: 8px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+      .product-tag--clay { background: var(--clay); }
+      .product-tag--mustard { color: var(--ink); background: var(--mustard); }
+      .image-action { position: absolute; right: 12px; bottom: 12px; left: 12px; min-height: 42px; border: 0; border-radius: 999px; background: rgba(250, 247, 240, 0.92); font-size: 9px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0; transform: translateY(8px); transition: 180ms ease; }
+      .product-card:hover .image-action, .image-action:focus-visible { opacity: 1; transform: translateY(0); }
+      .product-info { min-height: 132px; padding: 20px 2px 16px; display: flex; justify-content: space-between; gap: 14px; }
+      .product-kicker { margin-bottom: 4px; color: var(--clay); font-size: 8px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+      .product-info h3 { margin-bottom: 5px; font-size: clamp(23px, 2.2vw, 34px); line-height: 1; }
+      .product-color { margin: 0; color: rgba(38, 37, 31, 0.67); font-size: 11px; }
+      .price { flex: 0 0 auto; margin: 0; font-family: var(--serif); font-size: 20px; text-align: right; }
+      .price small { display: block; font-family: var(--sans); font-size: 7px; letter-spacing: 0.06em; text-transform: uppercase; }
+      .quick-add { width: 100%; min-height: 48px; padding: 0 16px; display: flex; align-items: center; justify-content: space-between; border: 1px solid var(--ink); background: transparent; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+      .quick-add:hover { color: var(--paper); background: var(--moss); border-color: var(--moss); }
+      .quick-add span { font-size: 18px; font-weight: 400; }
 
-      .shop { padding: clamp(80px, 9vw, 140px) clamp(20px, 5vw, 80px); }
-      .section-head { margin-bottom: 70px; display: grid; grid-template-columns: 0.45fr 1.2fr 0.65fr; align-items: end; gap: clamp(28px, 5vw, 80px); }
-      .section-head .eyebrow { align-self: start; }
-      .section-head h2, .story-card h2, .principles h2, .finder h2, .signup h2 { margin-bottom: 0; font-size: clamp(54px, 6.5vw, 104px); font-weight: 700; letter-spacing: -0.065em; line-height: 0.92; }
-      .section-head > p:last-child { margin-bottom: 0; font-size: 18px; }
-      .shop-grid { display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(480px, 0.95fr); align-items: start; gap: clamp(42px, 6vw, 90px); }
-      .flatlay { position: sticky; top: 24px; margin: 0; overflow: hidden; border: 2px solid var(--ink); }
-      .flatlay img { width: 100%; aspect-ratio: 1; object-fit: cover; }
-      .hotspot { position: absolute; width: 34px; height: 34px; display: grid; place-items: center; border: 2px solid var(--ink); border-radius: 50%; background: var(--yellow); font-size: 10px; font-weight: 700; }
-      .hotspot-one { top: 9%; left: 10%; }
-      .hotspot-two { top: 10%; right: 9%; }
-      .hotspot-three { bottom: 18%; left: 8%; }
-      .hotspot-four { right: 10%; bottom: 22%; }
-      .product-list { border-top: 2px solid var(--ink); }
-      .product-row { min-height: 185px; padding: 26px 0; display: grid; grid-template-columns: 36px 1fr 118px; align-items: center; gap: 18px; border-bottom: 2px solid var(--ink); }
-      .product-number, .product-type { font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
-      .product-number { align-self: start; padding-top: 7px; color: var(--blue); }
-      .product-type { margin-bottom: 4px; color: var(--red); }
-      .product-row h3 { margin-bottom: 8px; font-size: clamp(27px, 2.8vw, 42px); font-weight: 700; letter-spacing: -0.05em; line-height: 1; }
-      .product-row p:last-child { max-width: 420px; margin-bottom: 0; font-size: 14px; }
-      .product-buy { align-self: stretch; display: flex; flex-direction: column; align-items: flex-end; justify-content: space-between; }
-      .product-buy > span { font-family: var(--display); font-size: 20px; font-weight: 700; }
-      .product-buy small { display: block; font-family: var(--sans); font-size: 8px; font-weight: 400; letter-spacing: 0.06em; text-transform: uppercase; }
-      .product-buy button { min-width: 92px; min-height: 42px; padding: 0 13px; display: flex; align-items: center; justify-content: space-between; border: 2px solid var(--ink); background: transparent; cursor: pointer; font-size: 11px; font-weight: 700; letter-spacing: 0.09em; text-transform: uppercase; }
-      .product-buy button:hover, .product-buy button:focus-visible { color: var(--cream); background: var(--blue); }
-      .product-buy b { font-size: 20px; }
-      .add-status { margin: 18px 0 0; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
+      .collection-banner { margin: 0 clamp(18px, 4vw, 64px); display: grid; grid-template-columns: minmax(0, 0.82fr) minmax(420px, 1.18fr); overflow: hidden; border-radius: 3px 80px 3px 3px; color: var(--paper); background: var(--moss); }
+      .collection-copy { padding: clamp(48px, 7vw, 104px); display: flex; flex-direction: column; align-items: flex-start; justify-content: center; }
+      .collection-copy .overline { color: var(--mustard); }
+      .collection-copy h2 { font-size: clamp(48px, 5.5vw, 80px); }
+      .collection-copy > p:not(.overline) { max-width: 520px; margin: 28px 0; }
+      .light-button { color: var(--ink); background: var(--paper); border-color: var(--paper); }
+      .collection-copy small { margin-top: 16px; max-width: 370px; font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; }
+      .collection-banner picture, .collection-banner img { height: 100%; min-height: 620px; }
+      .collection-banner img { object-fit: cover; }
 
-      .ticker { overflow: hidden; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); color: var(--cream); background: var(--red); }
-      .ticker span { min-width: max-content; padding: 17px 0; display: block; font-family: var(--display); font-size: 27px; font-weight: 700; letter-spacing: -0.03em; animation: ticker 22s linear infinite; }
+      .section-heading--center { max-width: 1050px; margin-inline: auto; text-align: center; grid-template-columns: 1fr; gap: 22px; }
+      .section-heading--center > p { max-width: 600px; margin: 0 auto; }
+      .routine-section { background: var(--oat); }
+      .routine-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+      .routine-grid button { min-height: 270px; padding: 30px; display: flex; flex-direction: column; align-items: flex-start; justify-content: flex-end; border: 1px solid var(--line); border-radius: 140px 140px 6px 6px; color: var(--paper); background: var(--moss); text-align: left; }
+      .routine-grid button:nth-child(2) { color: var(--ink); background: var(--mustard); }
+      .routine-grid button:nth-child(3) { background: var(--clay); }
+      .routine-grid span { margin-bottom: auto; font-size: 9px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
+      .routine-grid strong { font-family: var(--serif); font-size: clamp(38px, 4vw, 60px); font-weight: 400; letter-spacing: -0.045em; line-height: 0.95; }
+      .routine-grid em { margin-top: 20px; padding-bottom: 3px; border-bottom: 1px solid currentColor; font-style: normal; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
 
-      .story { position: relative; min-height: 780px; overflow: hidden; background: var(--cream); }
-      .story > picture, .story > picture img { position: absolute; inset: 0; width: 100%; height: 100%; }
-      .story img { object-fit: cover; object-position: center; }
-      .story-card { position: absolute; z-index: 2; top: 50%; left: clamp(24px, 6vw, 94px); width: min(550px, 42vw); padding: clamp(34px, 5vw, 70px); background: var(--blue); color: var(--cream); transform: translateY(-50%) rotate(-1deg); box-shadow: 12px 12px 0 var(--yellow); }
-      .story-card h2 { font-size: clamp(48px, 5.2vw, 78px); }
-      .story-card > p:not(.eyebrow) { margin: 30px 0; }
-      .photo-note { z-index: 2; }
+      .why-section { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(420px, 0.9fr); background: var(--paper); }
+      .why-photo { position: relative; min-height: 760px; overflow: hidden; }
+      .why-photo picture, .why-photo img { height: 100%; }
+      .why-photo img { object-fit: cover; object-position: 62% center; }
+      .why-photo > p { position: absolute; right: 12px; bottom: 10px; margin: 0; padding: 6px 9px; color: var(--paper); background: rgba(38, 50, 41, 0.88); font-size: 8px; letter-spacing: 0.08em; text-transform: uppercase; }
+      .why-copy { padding: clamp(60px, 8vw, 130px); display: flex; flex-direction: column; justify-content: center; background: #e3dccb; }
+      .why-copy h2 { font-size: clamp(50px, 5.7vw, 84px); }
+      .why-intro { margin: 28px 0 36px; font-size: 17px; }
+      .why-copy dl { margin: 0; }
+      .why-copy dl div { padding: 20px 0; display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 24px; border-top: 1px solid var(--line); }
+      .why-copy dt { font-family: var(--serif); font-size: 19px; }
+      .why-copy dd { margin: 0; font-size: 13px; }
 
-      .principles { padding: clamp(84px, 10vw, 155px) clamp(20px, 5vw, 80px); display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(50px, 9vw, 140px); background: var(--cream); }
-      .principles-title { position: sticky; top: 30px; align-self: start; }
-      .principle-grid { border-top: 2px solid var(--ink); }
-      .principle-grid article { min-height: 240px; padding: 32px 0; display: grid; grid-template-columns: 50px 0.9fr 1fr; align-items: center; gap: 24px; border-bottom: 2px solid var(--ink); }
-      .principle-grid span { align-self: start; color: var(--red); font-size: 11px; font-weight: 700; }
-      .principle-grid h3 { margin: 0; font-size: clamp(28px, 3vw, 43px); letter-spacing: -0.05em; line-height: 1; }
-      .principle-grid p { margin: 0; }
+      .faq-section { display: grid; grid-template-columns: minmax(280px, 0.75fr) minmax(0, 1.25fr); gap: clamp(60px, 10vw, 160px); }
+      .faq-section h2 { font-size: clamp(50px, 5.5vw, 78px); }
+      .faq-list { border-top: 1px solid var(--line); }
+      .faq-list details { border-bottom: 1px solid var(--line); }
+      .faq-list summary { min-height: 78px; padding: 22px 48px 22px 0; display: flex; align-items: center; position: relative; list-style: none; font-family: var(--serif); font-size: 22px; cursor: pointer; }
+      .faq-list summary::-webkit-details-marker { display: none; }
+      .faq-list summary::after { position: absolute; right: 5px; font-family: var(--sans); font-size: 18px; content: "+"; }
+      .faq-list details[open] summary::after { content: "-"; }
+      .faq-list p { max-width: 670px; margin-bottom: 26px; font-size: 14px; }
 
-      .finder { padding: clamp(80px, 9vw, 140px) clamp(20px, 5vw, 80px); display: grid; grid-template-columns: 0.85fr 1.15fr; gap: clamp(55px, 8vw, 125px); border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); background: var(--yellow); }
-      .finder-options { border-top: 2px solid var(--ink); }
-      .finder-options button { width: 100%; min-height: 105px; padding: 20px 6px; display: grid; grid-template-columns: 48px 1fr; align-items: center; gap: 18px; border: 0; border-bottom: 2px solid var(--ink); background: transparent; cursor: pointer; text-align: left; font-family: var(--display); font-size: clamp(22px, 2.4vw, 35px); font-weight: 700; letter-spacing: -0.04em; }
-      .finder-options button span { font-family: var(--sans); font-size: 11px; }
-      .finder-options button:hover, .finder-options button:focus-visible, .finder-options button.is-selected { padding-left: 20px; color: var(--cream); background: var(--blue); }
-      #finder-result { min-height: 70px; margin: 24px 0 0; padding: 0 6px; font-size: 15px; }
+      .newsletter { padding: clamp(68px, 8vw, 110px) clamp(18px, 6vw, 96px); display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(380px, 0.9fr); align-items: end; gap: clamp(50px, 8vw, 130px); color: var(--paper); background: var(--clay); }
+      .newsletter .overline { color: var(--oat); }
+      .newsletter h2 { font-size: clamp(50px, 6vw, 86px); }
+      .newsletter label { display: block; margin-bottom: 10px; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+      .newsletter form > div { display: grid; grid-template-columns: 1fr auto; }
+      .newsletter input { min-width: 0; min-height: 52px; padding: 0 15px; border: 1px solid var(--paper); background: transparent; }
+      .newsletter input::placeholder { color: rgba(250, 247, 240, 0.68); }
+      .newsletter button { padding: 0 20px; border: 1px solid var(--paper); color: var(--ink); background: var(--paper); font-size: 9px; font-weight: 700; text-transform: uppercase; }
+      .newsletter form p { margin: 10px 0 0; font-size: 9px; }
 
-      .signup { padding: clamp(80px, 9vw, 140px) clamp(20px, 5vw, 80px); display: grid; grid-template-columns: 0.75fr 1.25fr; align-items: end; gap: clamp(50px, 10vw, 160px); color: var(--cream); background: var(--red); }
-      .signup form { border-top: 2px solid var(--cream); }
-      .signup label { margin: 24px 0 12px; display: block; font-size: 10px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; }
-      .signup form > div { display: grid; grid-template-columns: 1fr auto; }
-      .signup input { min-width: 0; min-height: 64px; padding: 0 16px; border: 2px solid var(--ink); border-right: 0; border-radius: 0; background: var(--paper); font-size: 16px; }
-      .signup button { min-height: 64px; padding: 0 20px; display: flex; align-items: center; gap: 34px; border: 2px solid var(--ink); color: var(--cream); background: var(--ink); cursor: pointer; font-size: 11px; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
-      .signup form > p { margin: 12px 0 0; font-size: 10px; letter-spacing: 0.06em; text-transform: uppercase; }
+      footer { padding: 62px clamp(18px, 4vw, 64px) 34px; display: grid; grid-template-columns: 1fr auto; gap: 56px; color: var(--paper); background: var(--deep-moss); }
+      .footer-brand { display: flex; align-items: center; gap: 14px; }
+      .footer-brand .brand-mark { border-color: var(--oat); }
+      .footer-brand div { display: flex; flex-direction: column; }
+      .footer-brand strong { font-family: var(--serif); font-size: 34px; font-weight: 400; letter-spacing: -0.035em; }
+      footer nav { display: flex; align-items: center; gap: 28px; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+      footer > p { grid-column: 1 / -1; max-width: 970px; margin: 0; padding-top: 24px; border-top: 1px solid rgba(250, 247, 240, 0.2); font-size: 9px; letter-spacing: 0.07em; text-transform: uppercase; }
 
-      footer { padding: 74px clamp(20px, 5vw, 80px) 34px; color: var(--cream); background: var(--ink); }
-      .footer-brand { display: flex; align-items: center; gap: 22px; }
-      .footer-brand .brand-mark { width: 72px; height: 72px; }
-      .footer-brand .brand-mark i { top: 15px; width: 14px; height: 18px; }
-      .footer-brand .brand-mark i:first-child { left: 14px; }
-      .footer-brand .brand-mark i:nth-child(2) { right: 14px; }
-      .footer-brand .brand-mark b { left: 22px; bottom: 13px; width: 28px; height: 29px; }
-      .footer-brand strong { font-family: var(--display); font-size: clamp(48px, 7vw, 106px); letter-spacing: -0.06em; }
-      footer nav { margin: 66px 0 38px; padding: 20px 0; display: flex; gap: 44px; border-top: 1px solid rgba(246,239,223,0.3); border-bottom: 1px solid rgba(246,239,223,0.3); }
-      footer nav a, .footer-bottom { font-size: 10px; letter-spacing: 0.09em; text-transform: uppercase; }
-      .footer-bottom { display: grid; grid-template-columns: 1.5fr 0.5fr; gap: 70px; color: rgba(246,239,223,0.68); }
-      .footer-bottom p { max-width: 900px; margin: 0; }
-      .footer-bottom a { justify-self: end; color: var(--yellow); }
-
-      .bag-dialog { width: min(520px, calc(100vw - 32px)); max-height: calc(100vh - 32px); padding: 0; border: 2px solid var(--ink); color: var(--ink); background: var(--cream); box-shadow: 12px 12px 0 var(--red); }
-      .bag-dialog::backdrop { background: rgba(18,64,216,0.78); }
-      .bag-head { min-height: 86px; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid var(--ink); background: var(--yellow); }
-      .bag-head h2 { margin: 0; font-size: 38px; letter-spacing: -0.06em; }
-      .bag-head button { width: 42px; height: 42px; border: 2px solid var(--ink); background: var(--cream); cursor: pointer; font-size: 25px; }
-      #bag-items { margin: 0; padding: 0 24px; list-style: none; }
-      #bag-items li { min-height: 66px; padding: 16px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; border-bottom: 1px solid var(--line); font-weight: 700; }
-      #bag-items span { font-size: 9px; font-weight: 400; letter-spacing: 0.08em; text-transform: uppercase; }
-      .bag-dialog > p { padding: 18px 24px 0; font-size: 12px; }
-      .bag-done { width: calc(100% - 48px); min-height: 52px; margin: 12px 24px 24px; border: 2px solid var(--ink); color: var(--cream); background: var(--blue); cursor: pointer; font-weight: 700; text-transform: uppercase; }
-
-      @keyframes ticker { to { transform: translateX(-50%); } }
+      dialog { border: 0; color: var(--ink); background: var(--paper); box-shadow: 0 30px 100px rgba(20, 24, 19, 0.35); }
+      dialog::backdrop { background: rgba(25, 30, 24, 0.56); backdrop-filter: blur(4px); }
+      .cart-drawer { width: min(480px, 100%); max-width: none; height: 100%; max-height: none; margin: 0 0 0 auto; padding: 0; }
+      .cart-head { min-height: 120px; padding: 28px 28px 24px; display: flex; align-items: flex-start; justify-content: space-between; border-bottom: 1px solid var(--line); }
+      .cart-head h2 { margin: 0; font-size: 42px; }
+      .cart-head button, .product-dialog > button:first-child { padding: 0; border: 0; border-bottom: 1px solid var(--ink); background: transparent; font-size: 9px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+      .cart-items { min-height: calc(100% - 290px); padding: 24px 28px; }
+      .empty-cart { font-family: var(--serif); font-size: 25px; }
+      .cart-line { padding: 16px 0; display: flex; justify-content: space-between; gap: 22px; border-bottom: 1px solid var(--line); }
+      .cart-line strong { font-family: var(--serif); font-size: 20px; font-weight: 400; }
+      .cart-foot { padding: 24px 28px; border-top: 1px solid var(--line); }
+      .cart-foot p { display: flex; justify-content: space-between; }
+      .cart-foot button { width: 100%; min-height: 52px; border: 0; color: var(--paper); background: var(--moss); font-size: 10px; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+      .cart-foot small { margin-top: 12px; display: block; font-size: 8px; text-transform: uppercase; }
+      .product-dialog { width: min(560px, calc(100% - 32px)); padding: clamp(34px, 5vw, 58px); border-radius: 4px 42px 4px 4px; }
+      .product-dialog > button:first-child { float: right; }
+      .product-dialog h2 { font-size: 52px; }
+      .product-dialog .primary-button { margin-top: 18px; }
+      .toast { position: fixed; z-index: 200; right: 20px; bottom: 20px; max-width: min(390px, calc(100% - 40px)); margin: 0; padding: 14px 18px; color: var(--paper); background: var(--deep-moss); font-size: 11px; opacity: 0; transform: translateY(16px); transition: 180ms ease; pointer-events: none; }
+      .toast.is-visible { opacity: 1; transform: translateY(0); }
 
       @media (max-width: 1080px) {
-        .site-header { grid-template-columns: 1fr auto; }
-        .desktop-nav { display: none; }
-        .hero { grid-template-columns: minmax(0, 0.95fr) minmax(420px, 1.05fr); }
-        h1 { font-size: clamp(66px, 8.6vw, 94px); }
-        .section-head { grid-template-columns: 0.35fr 1.2fr 0.65fr; }
-        .shop-grid { grid-template-columns: minmax(0, 0.95fr) minmax(450px, 1.05fr); gap: 44px; }
-        .principles, .finder { grid-template-columns: 0.75fr 1.25fr; gap: 62px; }
-      }
-
-      @media (min-width: 761px) and (max-height: 760px) {
-        .hero-copy { padding-block: 36px; }
-        .kicker { margin-bottom: 16px; }
-        h1 { margin-bottom: 20px; font-size: clamp(64px, 6.8vw, 86px); }
-        .hero-intro { margin-bottom: 24px; font-size: 17px; }
-        .concept-note { margin-top: 22px; }
-        .hero-sticker { top: 26px; left: 28px; width: 120px; height: 120px; padding: 18px; }
+        .header-main { grid-template-columns: 1fr minmax(230px, 0.7fr) auto; }
+        .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 42px 20px; }
+        .collection-banner { grid-template-columns: 1fr 1fr; }
+        .why-copy { padding: 70px 56px; }
       }
 
       @media (max-width: 760px) {
-        html { scroll-behavior: auto; scroll-padding-top: 72px; }
-        body { font-size: 16px; }
-        .concept-strip { min-height: 28px; padding-inline: 12px; justify-content: center; font-size: 8px; text-align: center; }
+        html { scroll-padding-top: 102px; }
+        .concept-strip { min-height: 30px; padding: 6px 12px; justify-content: center; text-align: center; }
         .concept-strip a { display: none; }
-        .site-header { position: sticky; top: 0; min-height: 72px; padding-inline: 14px; grid-template-columns: 1fr auto auto; gap: 12px; background: var(--cream); }
-        .brand { gap: 8px; font-size: 18px; }
-        .brand-mark { width: 36px; height: 36px; }
-        .brand-mark i { top: 8px; width: 7px; height: 9px; }
-        .brand-mark i:first-child { left: 7px; }
-        .brand-mark i:nth-child(2) { right: 7px; }
-        .brand-mark b { left: 11px; bottom: 7px; width: 14px; height: 15px; }
-        .bag-button { min-height: 40px; padding: 0 9px; gap: 6px; font-size: 10px; }
-        .bag-button span { width: 22px; height: 22px; }
-        .mobile-nav { display: block; justify-self: end; }
-        .mobile-nav summary { width: 42px; min-height: 42px; display: grid; place-items: center; cursor: pointer; font-size: 0; list-style: none; }
-        .mobile-nav summary::-webkit-details-marker { display: none; }
-        .mobile-nav summary span, .mobile-nav summary span::before, .mobile-nav summary span::after { width: 22px; height: 2px; display: block; background: var(--ink); content: ""; }
-        .mobile-nav summary span::before { transform: translateY(-7px); }
-        .mobile-nav summary span::after { transform: translateY(5px); }
-        .mobile-nav nav { position: absolute; top: 72px; right: 0; left: 0; padding: 12px 16px 20px; display: grid; border-bottom: 2px solid var(--ink); background: var(--yellow); box-shadow: 0 18px 30px rgba(23,23,22,0.2); }
-        .mobile-nav nav a { min-height: 52px; display: flex; align-items: center; border-bottom: 2px solid var(--ink); font-family: var(--display); font-size: 22px; font-weight: 700; }
+        .header-main { min-height: 72px; padding: 0 15px; grid-template-columns: 1fr auto; gap: 12px; }
+        .brand { gap: 9px; }
+        .brand-mark { width: 35px; height: 39px; }
+        .brand-mark::before { top: 10px; left: 7px; width: 7px; height: 8px; }
+        .brand-mark::after { top: 10px; right: 7px; width: 7px; height: 8px; }
+        .brand-mark i { bottom: 6px; left: 11px; width: 11px; height: 12px; }
+        .brand-copy { font-size: 19px; }
+        .brand-copy small { font-size: 6px; }
+        .search-trigger, .account-button, .shop-nav { display: none; }
+        .header-actions { gap: 10px; }
+        .bag-button { min-height: 38px; padding: 0 12px; font-size: 9px; }
+        .mobile-menu { position: static; display: block; }
+        .mobile-menu summary { width: 40px; height: 40px; display: grid; place-items: center; list-style: none; cursor: pointer; }
+        .mobile-menu summary::-webkit-details-marker { display: none; }
+        .mobile-menu summary span, .mobile-menu summary span::before, .mobile-menu summary span::after { width: 22px; height: 1px; display: block; background: var(--ink); content: ""; }
+        .mobile-menu summary span::before { transform: translateY(-6px); }
+        .mobile-menu summary span::after { transform: translateY(5px); }
+        .mobile-menu nav { position: absolute; top: 72px; right: 0; left: 0; padding: 12px 18px 20px; display: grid; border-bottom: 1px solid var(--line); background: var(--oat); box-shadow: 0 20px 40px rgba(38, 37, 31, 0.18); }
+        .mobile-menu nav a, .mobile-menu nav button { min-height: 48px; padding: 0; display: flex; align-items: center; border: 0; border-bottom: 1px solid var(--line); background: transparent; font-family: var(--serif); font-size: 21px; text-align: left; }
 
-        .hero { min-height: 0; display: flex; flex-direction: column; }
-        .hero-copy { min-height: 610px; padding: 68px 22px 54px; order: 2; }
-        .kicker, .eyebrow { margin-bottom: 20px; font-size: 9px; }
-        h1 { margin-bottom: 24px; font-size: clamp(60px, 18vw, 74px); line-height: 0.9; }
-        .hero-intro { margin-bottom: 28px; font-size: 17px; }
-        .hero-actions { align-items: stretch; flex-direction: column; gap: 18px; }
-        .button { width: 100%; }
-        .text-link { align-self: flex-start; }
-        .concept-note { margin-top: 28px; }
-        .hero-visual { min-height: 520px; order: 1; }
-        .hero-visual img { object-position: center 52%; }
-        .hero-sticker { top: 18px; left: 16px; width: 108px; height: 108px; padding: 16px; }
-        .hero-sticker strong { font-size: 17px; }
+        .hero { min-height: 0; padding-bottom: 18px; }
+        .hero > picture { position: relative; height: 520px; display: block; }
+        .hero > picture img { object-position: 63% center; }
+        .hero::after { background: linear-gradient(0deg, rgba(29, 34, 27, 0.28), transparent 58%); }
+        .hero-card { position: relative; right: auto; bottom: auto; left: auto; width: auto; margin: -76px 16px 0; padding: 28px 24px; border-radius: 2px 28px 2px 2px; }
+        .hero-card h1 { margin-bottom: 16px; font-size: clamp(47px, 13.8vw, 60px); }
+        .hero-card > p:not(.overline) { margin-bottom: 22px; font-size: 15px; }
+        .hero-actions { align-items: stretch; flex-direction: column; gap: 13px; }
+        .hero-actions button { align-self: flex-start; min-height: 36px; }
+        .hero-card small { margin-top: 18px; line-height: 1.45; }
+        .photo-credit { top: 10px; right: 10px; bottom: auto; }
+        .service-row { padding: 18px; grid-template-columns: 1fr 1fr; gap: 0; }
+        .service-row p { min-height: 54px; padding: 12px 8px; display: flex; align-items: center; justify-content: center; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); font-size: 13px; }
+        .service-row p:nth-child(2) { border-right: 0; }
+        .service-row p:nth-child(n + 3) { border-bottom: 0; }
 
-        .category-bar { grid-template-columns: 1fr 1fr; }
-        .category-bar a { min-height: 72px; padding: 15px 18px; font-size: 22px; border-bottom: 2px solid var(--ink); }
-        .category-bar a:nth-child(2) { border-right: 0; }
-        .category-bar a:nth-child(n+3) { border-bottom: 0; }
+        .shop-section, .routine-section, .faq-section { padding: 76px 16px; }
+        .section-heading { margin-bottom: 34px; grid-template-columns: 1fr; gap: 20px; }
+        .section-heading h2, .collection-copy h2, .why-copy h2, .faq-section h2, .newsletter h2 { font-size: clamp(46px, 13vw, 58px); }
+        .filter-bar { margin-inline: -16px; padding: 0 16px 4px; overflow-x: auto; scrollbar-width: none; }
+        .filter-bar::-webkit-scrollbar { display: none; }
+        .filter-chip { flex: 0 0 auto; }
+        #product-count { display: none; }
+        .product-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 38px 10px; }
+        .product-image { border-radius: 90px 90px 7px 7px; }
+        .product-tag { top: 9px; left: 9px; padding: 5px 7px; font-size: 6px; }
+        .image-action { display: none; }
+        .product-info { min-height: 142px; padding: 14px 0 12px; flex-direction: column; justify-content: flex-start; gap: 8px; }
+        .product-kicker { font-size: 6px; }
+        .product-info h3 { font-size: 22px; }
+        .product-color { font-size: 9px; }
+        .price { font-size: 18px; text-align: left; }
+        .quick-add { min-height: 43px; padding: 0 11px; font-size: 7px; }
 
-        .shop { padding: 72px 18px; }
-        .section-head { margin-bottom: 42px; display: block; }
-        .section-head h2, .story-card h2, .principles h2, .finder h2, .signup h2 { font-size: clamp(49px, 14vw, 62px); }
-        .section-head > p:last-child { margin: 26px 0 0; font-size: 16px; }
-        .shop-grid { display: block; }
-        .flatlay { position: relative; top: auto; margin-bottom: 42px; }
-        .product-row { min-height: 0; padding: 24px 0; grid-template-columns: 26px 1fr; gap: 12px; }
-        .product-number { padding-top: 4px; }
-        .product-row h3 { font-size: 30px; }
-        .product-buy { grid-column: 2; margin-top: 14px; flex-direction: row; align-items: center; }
-        .product-buy button { min-width: 104px; }
-        .ticker span { font-size: 22px; }
+        .collection-banner { margin: 0 16px; display: flex; flex-direction: column-reverse; border-radius: 3px 44px 3px 3px; }
+        .collection-copy { padding: 42px 24px; }
+        .collection-copy > p:not(.overline) { margin: 22px 0; }
+        .collection-banner picture, .collection-banner img { min-height: 350px; }
+        .routine-grid { grid-template-columns: 1fr; }
+        .routine-grid button { min-height: 230px; padding: 26px; border-radius: 110px 110px 5px 5px; }
 
-        .story { min-height: 0; display: flex; flex-direction: column; }
-        .story > picture { position: relative; width: 100%; height: auto; aspect-ratio: 4 / 5; }
-        .story > picture img { object-position: 66% center; }
-        .story-card { position: relative; top: auto; left: auto; width: auto; padding: 58px 22px 62px; transform: none; box-shadow: none; }
-        .story-card > p:not(.eyebrow) { margin: 26px 0; }
-        .photo-note { top: min(112vw, 430px); right: 10px; bottom: auto; }
-
-        .principles { padding: 72px 20px; display: block; }
-        .principles-title { position: static; }
-        .principle-grid { margin-top: 50px; }
-        .principle-grid article { min-height: 0; padding: 28px 0 32px; grid-template-columns: 34px 1fr; gap: 12px; }
-        .principle-grid h3 { font-size: 31px; }
-        .principle-grid p { grid-column: 2; }
-
-        .finder { padding: 72px 20px; display: block; }
-        .finder-options { margin-top: 48px; }
-        .finder-options button { min-height: 86px; grid-template-columns: 30px 1fr; font-size: 24px; }
-        .finder-options button:hover, .finder-options button:focus-visible, .finder-options button.is-selected { padding-left: 12px; }
-
-        .signup { padding: 72px 20px; display: block; }
-        .signup form { margin-top: 48px; }
-        .signup form > div { grid-template-columns: 1fr; }
-        .signup input { border-right: 2px solid var(--ink); border-bottom: 0; }
-        .signup button { justify-content: space-between; }
-
-        footer { padding: 56px 20px 28px; }
-        .footer-brand { gap: 14px; }
-        .footer-brand .brand-mark { width: 54px; height: 54px; }
-        .footer-brand .brand-mark i { top: 12px; width: 10px; height: 13px; }
-        .footer-brand .brand-mark i:first-child { left: 11px; }
-        .footer-brand .brand-mark i:nth-child(2) { right: 11px; }
-        .footer-brand .brand-mark b { left: 17px; bottom: 10px; width: 20px; height: 21px; }
-        .footer-brand strong { font-size: 42px; line-height: 1; }
-        footer nav { margin: 48px 0 32px; display: grid; grid-template-columns: 1fr 1fr; gap: 0 20px; }
-        footer nav a { min-height: 44px; display: flex; align-items: center; }
-        .footer-bottom { grid-template-columns: 1fr; gap: 24px; }
-        .footer-bottom a { justify-self: start; }
+        .why-section { grid-template-columns: 1fr; }
+        .why-photo { min-height: 520px; }
+        .why-photo img { object-position: 60% center; }
+        .why-copy { padding: 64px 22px; }
+        .why-intro { font-size: 16px; }
+        .why-copy dl div { grid-template-columns: 1fr; gap: 6px; }
+        .faq-section { grid-template-columns: 1fr; gap: 40px; }
+        .faq-list summary { min-height: 70px; font-size: 19px; }
+        .newsletter { padding: 68px 20px; grid-template-columns: 1fr; gap: 38px; }
+        .newsletter form > div { grid-template-columns: 1fr; }
+        .newsletter input { border-bottom: 0; }
+        .newsletter button { min-height: 50px; }
+        footer { grid-template-columns: 1fr; gap: 34px; }
+        footer nav { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+        .cart-drawer { width: 100%; }
+        .cart-head h2 { font-size: 36px; }
+        .toast { right: 12px; bottom: 12px; max-width: calc(100% - 24px); }
       }
 
       @media (prefers-reduced-motion: reduce) {
         html { scroll-behavior: auto; }
-        .ticker span { animation: none; }
-        .button { transition: none; }
+        *, *::before, *::after { transition: none !important; }
       }
     </style>
+
+    <script is:inline>
+      const bagButton = document.querySelector("#bag-button");
+      const bagCount = document.querySelector("#bag-count");
+      const cartDialog = document.querySelector("#cart-dialog");
+      const cartClose = document.querySelector("#cart-close");
+      const cartItems = document.querySelector("#cart-items");
+      const cartSubtotal = document.querySelector("#cart-subtotal");
+      const toast = document.querySelector("#toast");
+      const productDialog = document.querySelector("#product-dialog");
+      const productDialogTitle = document.querySelector("#product-dialog-title");
+      const previewAdd = document.querySelector("#preview-add");
+      const products = [];
+      let toastTimer;
+
+      const showToast = (message) => {
+        toast.textContent = message;
+        toast.classList.add("is-visible");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(() => toast.classList.remove("is-visible"), 2600);
+      };
+
+      const renderBag = () => {
+        bagCount.textContent = String(products.length);
+        if (!products.length) {
+          cartItems.innerHTML = '<p class="empty-cart">Your concept bag is empty.</p>';
+          cartSubtotal.textContent = "$0";
+          return;
+        }
+        cartItems.innerHTML = products.map((item) => `<div class="cart-line"><strong>${item.name}</strong><span>${item.price}</span></div>`).join("");
+        const subtotal = products.reduce((total, item) => total + Number(item.price.replace(/[^0-9.]/g, "")), 0);
+        cartSubtotal.textContent = `$${subtotal}`;
+      };
+
+      const addProduct = (name, price) => {
+        products.push({ name, price });
+        renderBag();
+        showToast(`${name} was added to the concept bag. Nothing was purchased.`);
+      };
+
+      document.querySelectorAll("[data-add]").forEach((button) => {
+        button.addEventListener("click", () => addProduct(button.dataset.add, button.dataset.price));
+      });
+
+      bagButton.addEventListener("click", () => cartDialog.showModal());
+      cartClose.addEventListener("click", () => cartDialog.close());
+      document.querySelector("#checkout-button").addEventListener("click", () => showToast("Checkout is intentionally disabled in this fictional concept."));
+
+      document.querySelectorAll("[data-preview]").forEach((button) => {
+        button.addEventListener("click", () => {
+          const name = button.dataset.preview;
+          const addButton = button.closest(".product-card").querySelector("[data-add]");
+          productDialogTitle.textContent = name;
+          previewAdd.dataset.name = name;
+          previewAdd.dataset.price = addButton.dataset.price;
+          productDialog.showModal();
+        });
+      });
+      document.querySelector("#product-dialog-close").addEventListener("click", () => productDialog.close());
+      previewAdd.addEventListener("click", () => {
+        addProduct(previewAdd.dataset.name, previewAdd.dataset.price);
+        productDialog.close();
+      });
+
+      const filterProducts = (category, searchTerm = "") => {
+        let visible = 0;
+        document.querySelectorAll("[data-product-card]").forEach((card) => {
+          const categoryMatch = category === "all" || card.dataset.category === category;
+          const searchMatch = !searchTerm || card.dataset.search.includes(searchTerm);
+          card.hidden = !(categoryMatch && searchMatch);
+          if (!card.hidden) visible += 1;
+        });
+        document.querySelectorAll("[data-filter]").forEach((chip) => {
+          const active = chip.dataset.filter === category;
+          chip.classList.toggle("is-active", active);
+          chip.setAttribute("aria-pressed", String(active));
+        });
+        document.querySelector("#product-count").textContent = `${visible} concept product${visible === 1 ? "" : "s"}`;
+        return visible;
+      };
+
+      document.querySelectorAll("[data-filter]").forEach((chip) => {
+        chip.addEventListener("click", () => filterProducts(chip.dataset.filter));
+      });
+      document.querySelectorAll("[data-category-link]").forEach((link) => {
+        link.addEventListener("click", () => {
+          filterProducts(link.dataset.categoryLink);
+          document.querySelector("#shop").scrollIntoView({ behavior: "smooth" });
+          const menu = link.closest("details");
+          if (menu) menu.removeAttribute("open");
+        });
+      });
+
+      const searchTrigger = document.querySelector("#search-trigger");
+      const searchPanel = document.querySelector("#search-panel");
+      searchTrigger.addEventListener("click", () => {
+        const opening = searchPanel.hidden;
+        searchPanel.hidden = !opening;
+        searchTrigger.setAttribute("aria-expanded", String(opening));
+        if (opening) document.querySelector("#shop-search").focus();
+      });
+      document.querySelector("#search-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        const query = document.querySelector("#shop-search").value.trim().toLowerCase();
+        const visible = filterProducts("all", query);
+        document.querySelector("#search-status").textContent = visible ? `${visible} concept product${visible === 1 ? "" : "s"} matched.` : "No concept products matched that search.";
+        searchPanel.hidden = true;
+        searchTrigger.setAttribute("aria-expanded", "false");
+        document.querySelector("#shop").scrollIntoView({ behavior: "smooth" });
+      });
+
+      document.querySelectorAll("[data-demo]").forEach((button) => button.addEventListener("click", () => showToast("Account features are not active in this fictional concept.")));
+      document.querySelector("#newsletter-form").addEventListener("submit", (event) => {
+        event.preventDefault();
+        document.querySelector("#newsletter-status").textContent = "Concept signup complete. Nothing was sent or saved.";
+      });
+    </script>
   </body>
 </html>
